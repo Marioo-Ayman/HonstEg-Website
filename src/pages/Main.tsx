@@ -1,0 +1,217 @@
+import Bg1 from "@/assets/Bg1.jpeg";
+import HH from "@/assets/HH.png";
+import HR from "@/assets/HR.png";
+import HFB from "@/assets/HFB.png";
+import invest from "@/assets/investment-bg.jpg";
+import { InvestmentCard } from "@/components/PackCard";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Pagination } from "@/components/Pagination";
+
+export default function Main() {
+  const investmentPackages = [
+    {
+      packageName: " PREMIUM",
+      returnPercentage: "5%",
+      description:
+        "Premium package with enhanced returns.",
+      minimumInvestment: "$7000",
+      duration: "1 Yaer",
+      riskLevel: "Monthly",
+      variant: "dark" as const,
+    },
+    {
+      packageName: "ELITE  ",
+      returnPercentage: "6%",
+      description:
+        "Elite package for serious investors.",
+      minimumInvestment: "$11,000",
+      duration: "1 year",
+      riskLevel: "Monthly",
+      variant: "dark" as const,
+    },
+    {
+      packageName: "FLEXI INVEST",
+      returnPercentage: "7%",
+      description:
+        "HFlexible investment with competitive returns.",
+      minimumInvestment: "$15,000",
+      duration: "1 year",
+      riskLevel: "Monthly",
+      variant: "dark" as const,
+    },
+    {
+      packageName: "VISIONARY",
+      returnPercentage: "9%",
+      description:
+        "Visionary package for forward-thinking investors.",
+      minimumInvestment: "$21,000",
+      duration: "1 year",
+      riskLevel: "Monthly",
+      variant: "dark" as const,
+    },
+    {
+      packageName: "LEGENDARY",
+      returnPercentage: "10%",
+      description:
+        "Legendary package for high-value investments.",
+      minimumInvestment: "$31,000",
+      duration: "1 year",
+      riskLevel: "Monthly",
+      variant: "dark" as const,
+    },
+    {
+      packageName: "INFINITY",
+      returnPercentage: "12%",
+      description:
+        "Conservative portfolio emphasizing capital preservation and steady income through government bonds and blue-chip dividends.",
+      minimumInvestment: "$110,000",
+      duration: "1 year",
+      riskLevel: "Monthly",
+      variant: "dark" as const,
+    },
+    {
+      packageName: "SUPREME",
+      returnPercentage: "13%",
+      description:
+        "Supreme package with semi-annual returns.",
+      minimumInvestment: "$200,000",
+      duration: "1 year",
+      riskLevel: "Semi-Annually",
+      variant: "dark" as const,
+    }
+  ];
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(investmentPackages.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentPackages = investmentPackages.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Smooth scroll to top
+    // window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  return (
+    <main className="">
+      <div className="min-h-screen flex items-center justify-center mb-15 overflow-hidden relative">
+        <img
+          src={Bg1}
+          alt="Background"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 blur-xs transform scale-x-105"
+        />
+        <div className="absolute inset-0 bg-stone-950 opacity-60"></div>
+        <div className="relative text-center text-white px-4">
+          {/* <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Welcome to Honest Egy
+          </h1> */}
+          <p className="text-5xl md:text-9xl font-thin text-white mb-8">
+            Take Your
+          </p>
+          <p className="text-5xl md:text-9xl font-medium text-[#FFB300] mb-8">
+            Invest Startegy
+          </p>
+          <p className="text-5xl md:text-9xl font-medium text-white mb-8">
+            TO THE NEXT LEVEL
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-col  justify-center items-center space-y-2.5 ">
+        <div className=" p-3 md:p-15 w-3/4 flex flex-col justify-center border-0 shadow-2xl ">
+          <h2 className="text-xl md:text-[30px] font">Welcome to Honest Egy</h2>
+          <br />
+          <h1 className="text-3xl md:text-6xl font-medium  bg-linear-to-r from-blue-950 via-sky-400 to-indigo-400 text-transparent bg-clip-text inline-block">
+            Words About Us
+          </h1>
+          <br />
+          <p className="w-2/3 text-[12px] md:text-2xl text-gray-700  mb-8">
+            A group of companies operating in several sectors, including <br />
+            real estate investment, gold investment, the Egyptian stock exchange
+            and securities trading, as well as training and qualifying
+            individuals in business, marketing, and technology.
+          </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-2 justify-around items-center w-3/4 mb-12">
+          <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+            <img
+              src={HH}
+              alt="Honest Homes"
+              className="object-cover w-35 h-35"
+            />
+            <p>Honest House</p>
+          </div>
+          <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+            <img
+              src={HR}
+              alt="Honest Of Revence"
+              className="object-cover w-35 h-35"
+            />
+            <p>Honest House</p>
+          </div>
+          <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+            <img src={HFB} alt="HFB" className="object-cover w-35 h-35" />
+            <p>Honest House</p>
+          </div>
+        </div>
+      </div>
+        <div className="flex flex-col justify-center items-center mb-12 relative p-4">
+        <img
+          src={invest}
+          alt="Background"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 "
+        />
+          <h2 className="text-xl md:text-[30px]" >INVESTMENT OFFER</h2>
+          <p className="text-3xl md:text-6xl font-medium  bg-linear-to-r from-blue-950 via-sky-400 to-indigo-400 text-transparent bg-clip-text inline-block">Our Investment Plans</p>
+          <br />
+          <p className="text-gray-900">
+            " Don't miss out on something interesting today just because you think
+            you'll find something better tomorrow."
+          </p>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="max-w-7xl mx-auto mb-8 text-center"
+          ></motion.div>
+
+          {/* Cards Grid with AnimatePresence for smooth transitions */}
+          <div className="max-w-7xl mx-auto">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentPage}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
+                {currentPackages.map((pkg, index) => (
+                  <InvestmentCard
+                    key={startIndex + index}
+                    packageName={pkg.packageName}
+                    returnPercentage={pkg.returnPercentage}
+                    description={pkg.description}
+                    minimumInvestment={pkg.minimumInvestment}
+                    duration={pkg.duration}
+                    riskLevel={pkg.riskLevel}
+                    variant={pkg.variant}
+                  />
+                ))}
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Pagination */}
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          </div>
+        </div>
+    </main>
+  );
+}
