@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Apply from "@/pages/Apply";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
@@ -6,7 +7,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 function App() {
   const Main = lazy(() => import("@/pages/Main"));
-  const Apply = lazy(() => import("@/pages/Apply"));
   const Footer = lazy(() => import("@/components/Footer"));
   return (
     <>
