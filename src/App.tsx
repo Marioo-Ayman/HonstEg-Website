@@ -10,10 +10,10 @@ function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/invest" element={<Apply />} />
-    </Routes>
+        <Routes>
+          <Route path="*" element={<Main />} />
+          <Route path="/invest" element={<Apply />} />
+        </Routes>
       <Footer />
     </>
   )
