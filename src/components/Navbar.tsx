@@ -4,7 +4,7 @@ import {
   Drawer, List, ListItem, ListItemButton, ListItemText, Box, Container 
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Logo from '@/assets/honestEGLogo.png';
+import Logo from '@/assets/honestEGLogo_dbrd.png';
 
 const navItems = ['Home', 'Services', 'About'];
 
@@ -114,7 +114,7 @@ const [isSticky, setIsSticky] = useState(false);
       position="fixed"
       className={`${mounted ? 'animate-navbar-enter ,animate-navbar-down' : ''} `}
       sx={{
-        backgroundColor: isSticky ?' #0A1A3C': 'transparent',
+        backgroundColor: isSticky ?' #0f172b': 'transparent',
         boxShadow: isSticky ? '0 6px 20px rgba(0,0,0,0.25)' : 'none',
         transition: 'box-shadow 0.3s ease , background-color 0.3s ease',
       }}
@@ -132,7 +132,7 @@ const [isSticky, setIsSticky] = useState(false);
           {/* Logo */}
           <div className="flex items-center gap-2">
          <img src={Logo} alt="logo" className='h-12.5' />
-            {/* <span className="text-white font-bold text-lg">REUNIR</span> */}
+            <span className="text-[#ffffff] font-bold text-lg">Honest Egy</span>
           </div>
 
           {/* Navigation Links */}
@@ -140,7 +140,7 @@ const [isSticky, setIsSticky] = useState(false);
             {navLinks.map((link, index) => (
               <span
                 key={link.label}
-                className="opacity-0 animate-link-drop text-white  font-medium cursor-pointer  hover:text-brand-primary"
+                className="opacity-0 animate-link-drop text-white  font-medium cursor-pointer  hover:text-[#FFB300]"
                 style={{
                   animationDelay: `${0.3 + index * 0.1}s`,
                 }}

@@ -2,8 +2,10 @@ import Bg1 from "@/assets/Bg1.jpeg";
 import HH from "@/assets/HH.png";
 import HR from "@/assets/HR.png";
 import HFB from "@/assets/HFB.png";
+import About from "@/assets/Algorithmic_20Trading.jpeg";
 import invest from "@/assets/investment-bg.jpg";
 import { InvestmentCard } from "@/components/PackCard";
+import ContactUs from "@/components/ContactUs";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Pagination } from "@/components/Pagination";
@@ -119,19 +121,24 @@ export default function Main() {
       </div>
 
       <div className="flex flex-col  justify-center items-center space-y-2.5 ">
-        <div className=" p-3 md:p-15 w-3/4 flex flex-col justify-center border-0 shadow-2xl ">
-          <h2 className="text-xl md:text-[30px] font">Welcome to Honest Egy</h2>
-          <br />
-          <h1 className="text-3xl md:text-6xl font-medium  bg-linear-to-r from-blue-950 via-sky-400 to-indigo-400 text-transparent bg-clip-text inline-block">
-            Words About Us
-          </h1>
-          <br />
-          <p className="w-2/3 text-[12px] md:text-2xl text-gray-700  mb-8">
-            A group of companies operating in several sectors, including <br />
-            real estate investment, gold investment, the Egyptian stock exchange
-            and securities trading, as well as training and qualifying
-            individuals in business, marketing, and technology.
-          </p>
+        <div id="About" className="flex flex-col md:flex-row border-0 shadow-2xl w-3/4  justify-center items-center">
+          <div className=" p-3 md:p-15 w-3/4 flex flex-col justify-center ">
+            <h2 className="text-xl md:text-[30px] font">Welcome to Honest Egy</h2>
+            <br />
+            <h1 className="text-3xl md:text-6xl font-medium  bg-linear-to-r from-blue-950 via-sky-400 to-indigo-400 text-transparent bg-clip-text inline-block">
+              Words About Us
+            </h1>
+            <br />
+            <p className="w-2/3 text-[12px] md:text-2xl text-gray-700  mb-8">
+              A group of companies operating in several sectors, including
+              real estate investment, gold investment, the Egyptian stock exchange
+              and securities trading, as well as training and qualifying
+              individuals in business, marketing, and technology.
+            </p>
+          </div>
+          <div>
+            <img src={About} alt="algorithm trading pic" className="scale-70 rounded-2xl drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] md:scale-90" />
+          </div>
         </div>
 
         <div className="flex flex-col md:flex-row gap-2 justify-around items-center w-3/4 mb-12">
@@ -144,6 +151,10 @@ export default function Main() {
             <p>Honest House</p>
           </div>
           <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+            <img src={HFB} alt="HFB" className="object-cover w-35 h-35" />
+            <p>Honest House</p>
+          </div>
+          <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
             <img
               src={HR}
               alt="Honest Of Revence"
@@ -151,13 +162,9 @@ export default function Main() {
             />
             <p>Honest House</p>
           </div>
-          <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
-            <img src={HFB} alt="HFB" className="object-cover w-35 h-35" />
-            <p>Honest House</p>
-          </div>
         </div>
       </div>
-        <div className="flex flex-col justify-center items-center mb-12 relative p-4">
+      <div id="Packs" className="flex flex-col justify-center items-center mb-12 relative p-4">
         <img
           src={invest}
           alt="Background"
@@ -212,6 +219,10 @@ export default function Main() {
             />
           </div>
         </div>
+        <div className="flex justify-center items-center mb-12">
+          <ContactUs/>
+        </div>
+
     </main>
   );
 }
