@@ -53,14 +53,18 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </a> */}
               <a
-                href="#Honestegy"
+                href="https://www.facebook.com/Honestegy.investment"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
                 aria-label="LinkedIn"
               >
                 <FacebookOutlinedIcon className="w-5 h-5" />
               </a>
               <a
-                href="#honestegy.net"
+                href="https://honestegy.net/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
                 aria-label="Instagram"
               >

@@ -120,8 +120,8 @@ export default function Main() {
         </div>
       </div>
 
-      <div className="flex flex-col  justify-center items-center space-y-2.5 ">
-        <div id="About" className="flex flex-col md:flex-row border-0 shadow-2xl w-3/4  justify-center items-center">
+      <div id="About" className="flex flex-col  scroll-mt-24 justify-center items-center space-y-2.5 ">
+        <div  className="flex flex-col md:flex-row border-0 shadow-2xl w-3/4  justify-center items-center">
           <div className=" p-3 md:p-15 w-3/4 flex flex-col justify-center ">
             <h2 className="text-xl md:text-[30px] font">Welcome to Honest Egy</h2>
             <br />
@@ -164,7 +164,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div id="Packs" className="flex flex-col justify-center items-center mb-12 relative p-4">
+      <div id="Packs" className="flex flex-col scroll-mt-24 justify-center items-center mb-12 relative p-4">
         <img
           src={invest}
           alt="Background"

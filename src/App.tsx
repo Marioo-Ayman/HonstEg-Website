@@ -1,26 +1,31 @@
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import Main from '@/pages/Main';
-import Apply from '@/pages/Apply';
-import './App.css'
+import Navbar from "@/components/Navbar";
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-function App() {
+import CircularProgress from "@mui/material/CircularProgress";
 
-const Main = lazy(() => import("@/pages/Main"));
-const Footer = lazy(() => import("@/components/Footer"));
+function App() {
+  const Main = lazy(() => import("@/pages/Main"));
+  const Apply = lazy(() => import("@/pages/Apply"));
+  const Footer = lazy(() => import("@/components/Footer"));
   return (
     <>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Navbar />
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center min-h-screen">
+            <CircularProgress color="warning" />
+          </div>
+        }
+      >
+        <Navbar />
         <Routes>
           <Route path="*" element={<Main />} />
           <Route path="/invest" element={<Apply />} />
         </Routes>
-      <Footer />
-    </Suspense>
+        <Footer />
+      </Suspense>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

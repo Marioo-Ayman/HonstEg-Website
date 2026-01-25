@@ -169,6 +169,7 @@ const [isSticky, setIsSticky] = useState(false);
                 borderColor: '#FFB300',
               },
             }}
+            href="#Packs"
           >
             Join Us
           </Button>
