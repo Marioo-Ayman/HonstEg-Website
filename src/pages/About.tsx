@@ -73,7 +73,7 @@ export default function About() {
       </section>
       <section className="w-full py-16 px-4 bg-gray-200/50 justify-items-center">
         <h1 className="text-5xl font-semibold">Sectors</h1>
-        <div className=" grid grid-cols-1 md:grid-cols-3 gap-10 p-20 md:w-3/4">
+        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-10 md:p-20 md:w-3/4">
           <div className="border-0 rounded-2xl shadow-2xl p-5 bg-white">
             <p className="p-2">Real Estate Investment</p>
             <p className="p-2 ">

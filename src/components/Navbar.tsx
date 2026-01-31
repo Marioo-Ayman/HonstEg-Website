@@ -193,7 +193,7 @@ const Navbar = () => {
             </div>
 
             {/* Join Us Button */}
-            <Link to="/invest">
+            <Link to="/#packs">
               <Button
                 variant="outlined"
                 sx={{
