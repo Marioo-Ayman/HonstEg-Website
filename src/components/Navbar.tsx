@@ -15,7 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "@/assets/honestEGLogo_dbrd.png";
 import { Link } from "react-router-dom";
-// export default function Navbar() {
+// export default function Navbar() {s
 //   const [mobileOpen, setMobileOpen] = useState(false);
 
 //   const handleDrawerToggle = () => {
@@ -150,7 +150,7 @@ const Navbar = () => {
                 </p>
               </Link>
 
-              <Link to="/#about">
+              <Link to="/About-Us">
                 <p
                   className="opacity-0 animate-link-drop text-white  font-medium cursor-pointer  hover:text-[#FFB300]"
                   style={{
@@ -248,7 +248,7 @@ const Navbar = () => {
               </Link>
             </ListItem>
             <ListItem disablePadding>
-              <Link to="/#about">
+              <Link to="/About-Us">
                 <ListItemButton onClick={handleDrawerToggle}>
                   <ListItemText primary="About" />
                 </ListItemButton>
