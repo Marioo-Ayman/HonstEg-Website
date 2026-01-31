@@ -141,7 +141,7 @@ const Navbar = () => {
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center gap-8">
-              <Link to="/">
+              <Link to="/#home">
                 <p
                   className="opacity-0 animate-link-drop text-white  font-medium cursor-pointer  hover:text-[#FFB300]"
                   style={{

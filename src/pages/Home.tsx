@@ -133,9 +133,11 @@ export default function Home() {
   const packsRef = useRef<HTMLDivElement| null>(null);
   const aboutRef = useRef<HTMLDivElement| null>(null);
   const contactRef = useRef<HTMLDivElement| null>(null);
+  const homeRef = useRef<HTMLDivElement| null>(null);
 
 const sectionRefs: Record<string, React.RefObject<HTMLElement | null>> = {
     packs: packsRef,
+    home: homeRef,
     about: aboutRef,
     contact: contactRef,
   };
@@ -155,7 +157,7 @@ const sectionRefs: Record<string, React.RefObject<HTMLElement | null>> = {
   };
   return (
     <main className="">
-      <div className="min-h-screen flex items-center justify-center mb-15 overflow-hidden relative">
+      <div ref={homeRef} id="home"className="min-h-screen flex items-center justify-center mb-15 overflow-hidden relative">
         <img
           src={Bg1}
           alt="Background"
