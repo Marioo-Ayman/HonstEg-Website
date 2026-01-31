@@ -7,7 +7,7 @@ import BM from "@/assets/business-man.jpg";
 
 export default function Companies() {
   return (
-    <>
+    <div className="overflow-hidden">
     <section className="w-full ">
         <div className=" pt-[15%] flex items-center justify-center overflow-hidden relative">
             <img
@@ -29,7 +29,7 @@ export default function Companies() {
     <section className="w-full py-16 px-4 bg-gray-400/20 relative flex justify-center items-center ">
         <div  className="flex flex-col md:flex-row w-11/12  justify-center items-center">
             <div className=" p-3 md:p-5 w-3/4 flex flex-col justify-center gap-4">
-                <h2 className="text-xl w-1/2 md:text-[30px] font-semibold">A number of companies operating across various sectors</h2>
+                <h2 className="text-xl md:w-1/2 md:text-[30px] font-semibold">A number of companies operating across various sectors</h2>
                 <p className=" text-md  text-gray-700  ">
                     Honest Egy Group consists of three companies operating in different sectors:
                     Honest Homes, specialized in real estate investment; 
@@ -193,6 +193,6 @@ export default function Companies() {
         </div>
       </div>
     </section>
-    </>
+    </div>
   );
 }

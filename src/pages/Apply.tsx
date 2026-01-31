@@ -49,7 +49,7 @@ const initialValues: ApplyFormValues = {
       >
         {({ values, handleChange, handleBlur, errors, touched, isSubmitting }) => (
           
-          <Form className='w-3/5  flex-col border-0 gap-3 shadow-2xl rounded-3xl flex p-10 bg-[#FFFFF] mt-30 mb-20'>
+          <Form className='md:w-3/5  flex-col border-0 gap-3 shadow-2xl rounded-3xl flex p-10 bg-[#FFFFF] mt-30 mb-20'>
             {/* user fields */}
             <div>
               <div className='p-1'><h1 className='bg-linear-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>Upload Your Image</h1></div>
@@ -64,7 +64,7 @@ const initialValues: ApplyFormValues = {
                   accept="image/*"
                 />
             <div className='p-1'><h1 className='bg-linear-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>USer Info</h1></div>
-            <div className='grid grid-cols-2 gap-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
               <TextField
               id="outlined"
               name="fName"              // must match initialValues
