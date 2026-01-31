@@ -1,13 +1,13 @@
 import Navbar from "@/components/Navbar";
-import Apply from "@/pages/Apply";
 import Companies from "@/pages/Companies";
 import Home from "@/pages/Home";
 import Footer from "@/components/Footer";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Suspense } from "react";
+import { Suspense,lazy } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 function App() {
+  const Apply = lazy(() => import("./pages/Apply"));
   return (
     <>
       <Suspense
