@@ -4,6 +4,7 @@ import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import Logo from '@/assets/honestEGLogo_dbrd.png';
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -89,6 +90,14 @@ export default function Footer() {
                 <a href="#Packs" className="text-slate-300 hover:text-white transition-colors text-sm">
                   – Packages
                 </a>
+              </li>
+              
+              <li>
+                <Link to="/our-companies">
+                  <p  className="text-slate-300 hover:text-white transition-colors text-sm">
+                    – Our Companies
+                  </p>
+                </Link>
               </li>
       
             </ul>

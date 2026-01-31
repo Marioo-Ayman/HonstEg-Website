@@ -7,11 +7,10 @@ import invest from "@/assets/investment-bg.jpg";
 import Counter from "@/components/Counter";
 import { InvestmentCard } from "@/components/PackCard";
 import ContactUs from "@/components/ContactUs";
-import { useState,useRef } from "react";
+import { useState,useRef, useEffect } from "react";
 import { motion, AnimatePresence,useInView } from "motion/react";
 import { Pagination } from "@/components/Pagination";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation} from "react-router-dom";
 export default function Home() {
   const investmentPackages = [
     {
@@ -128,7 +127,29 @@ export default function Home() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentPackages = investmentPackages.slice(startIndex, endIndex);
+  const location = useLocation();
 
+  // Create refs for multiple sections
+  const packsRef = useRef<HTMLDivElement| null>(null);
+  const aboutRef = useRef<HTMLDivElement| null>(null);
+  const contactRef = useRef<HTMLDivElement| null>(null);
+
+const sectionRefs: Record<string, React.RefObject<HTMLElement | null>> = {
+    packs: packsRef,
+    about: aboutRef,
+    contact: contactRef,
+  };
+
+  // Scroll to the correct section when location.hash changes
+  useEffect(() => {
+    if (location.hash) {
+      const hash = location.hash.replace("#", ""); // remove #
+      const ref = sectionRefs[hash];
+      if (ref && ref.current) {
+        ref.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
@@ -157,7 +178,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="About" className="flex flex-col  scroll-mt-24 justify-center items-center space-y-2.5 ">
+      <div ref={aboutRef} id="about" className="flex flex-col  scroll-mt-24 justify-center items-center space-y-2.5 ">
         <div  className="flex flex-col md:flex-row border-0 rounded-xl shadow-2xl w-3/4  pt-10 pb-10 justify-center items-center">
           <div className=" p-3 md:p-15 w-3/4 flex flex-col justify-center ">
             <h2 className="text-xl md:text-[30px] font">Welcome to Honest Egy</h2>
@@ -225,7 +246,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <div id="Packs" className="flex flex-col scroll-mt-24 justify-center items-center mb-12 relative p-4">
+      <div ref={packsRef} id="packs" className="flex flex-col scroll-mt-24 justify-center items-center mb-12 relative p-4">
         <img
           src={invest}
           alt="Background"
@@ -280,7 +301,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div id="CU" className="flex justify-center scroll-mt-24 items-center mb-12">
+        <div ref={contactRef} id="contact" className="flex justify-center scroll-mt-24 items-center mb-12">
           <ContactUs/>
         </div>
 
