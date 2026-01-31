@@ -4,15 +4,40 @@ import HR from "@/assets/HR.png";
 import HFB from "@/assets/HFB.png";
 import About from "@/assets/Algorithmic_20Trading.jpeg";
 import invest from "@/assets/investment-bg.jpg";
+import Counter from "@/components/Counter";
 import { InvestmentCard } from "@/components/PackCard";
 import ContactUs from "@/components/ContactUs";
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useState,useRef } from "react";
+import { motion, AnimatePresence,useInView } from "motion/react";
 import { Pagination } from "@/components/Pagination";
+import { Link } from "react-router-dom";
 
-export default function Main() {
+export default function Home() {
   const investmentPackages = [
     {
+      packageId: "8",
+      packageName: "Starter",
+      returnPercentage: "3%",
+      description:
+        "Starter investemnt package for beginners in USD .",
+      minimumInvestment: "$1000",
+      duration: "1 Yaer",
+      riskLevel: "Monthly",
+      variant: "dark" as const,
+    },
+    {
+      packageId: "9",
+      packageName: " Growth",
+      returnPercentage: "4%",
+      description:
+        "Growth package for expanding portfolios.",
+      minimumInvestment: "$4000",
+      duration: "1 Yaer",
+      riskLevel: "Monthly",
+      variant: "dark" as const,
+    },
+    {
+      packageId: "1",
       packageName: " PREMIUM",
       returnPercentage: "5%",
       description:
@@ -23,6 +48,8 @@ export default function Main() {
       variant: "dark" as const,
     },
     {
+            packageId: "2",
+
       packageName: "ELITE  ",
       returnPercentage: "6%",
       description:
@@ -33,6 +60,8 @@ export default function Main() {
       variant: "dark" as const,
     },
     {
+            packageId: "3",
+
       packageName: "FLEXI INVEST",
       returnPercentage: "7%",
       description:
@@ -43,6 +72,8 @@ export default function Main() {
       variant: "dark" as const,
     },
     {
+            packageId: "4",
+
       packageName: "VISIONARY",
       returnPercentage: "9%",
       description:
@@ -53,6 +84,8 @@ export default function Main() {
       variant: "dark" as const,
     },
     {
+            packageId: "5",
+
       packageName: "LEGENDARY",
       returnPercentage: "10%",
       description:
@@ -63,6 +96,8 @@ export default function Main() {
       variant: "dark" as const,
     },
     {
+            packageId: "6",
+
       packageName: "INFINITY",
       returnPercentage: "12%",
       description:
@@ -73,6 +108,8 @@ export default function Main() {
       variant: "dark" as const,
     },
     {
+            packageId: "7",
+
       packageName: "SUPREME",
       returnPercentage: "13%",
       description:
@@ -83,6 +120,8 @@ export default function Main() {
       variant: "dark" as const,
     }
   ];
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
   const totalPages = Math.ceil(investmentPackages.length / itemsPerPage);
@@ -121,7 +160,7 @@ export default function Main() {
       </div>
 
       <div id="About" className="flex flex-col  scroll-mt-24 justify-center items-center space-y-2.5 ">
-        <div  className="flex flex-col md:flex-row border-0 shadow-2xl w-3/4  justify-center items-center">
+        <div  className="flex flex-col md:flex-row border-0 rounded-xl shadow-2xl w-3/4  pt-10 pb-10 justify-center items-center">
           <div className=" p-3 md:p-15 w-3/4 flex flex-col justify-center ">
             <h2 className="text-xl md:text-[30px] font">Welcome to Honest Egy</h2>
             <br />
@@ -129,7 +168,7 @@ export default function Main() {
               Words About Us
             </h1>
             <br />
-            <p className="w-2/3 text-[12px] md:text-2xl text-gray-700  mb-8">
+            <p className=" text-[12px] md:text-2xl text-gray-700  mb-8">
               A group of companies operating in several sectors, including
               real estate investment, gold investment, the Egyptian stock exchange
               and securities trading, as well as training and qualifying
@@ -142,27 +181,51 @@ export default function Main() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-2 justify-around items-center w-3/4 mb-12">
-          <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
-            <img
-              src={HH}
-              alt="Honest Homes"
-              className="object-cover w-35 h-35"
-            />
-            <p>Honest House</p>
-          </div>
-          <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
-            <img src={HFB} alt="HFB" className="object-cover w-35 h-35" />
-            <p>Honest House</p>
-          </div>
-          <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
-            <img
-              src={HR}
-              alt="Honest Of Revence"
-              className="object-cover w-35 h-35"
-            />
-            <p>Honest House</p>
-          </div>
+          <Link to="/our-companies">
+            <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+              <img
+                src={HH}
+                alt="Honest Homes"
+                className="object-cover scale-70 h-35"
+              />
+              <p>Honest House</p>
+            </div>
+          </Link>
+          <Link to="/our-companies">
+            <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+              <img src={HFB} alt="HFB" className="object-cover w-35 h-35" />
+              <p>Honest House</p>
+            </div>
+          </Link>
+          <Link to="/our-companies">
+            <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+              <img
+                src={HR}
+                alt="Honest Of Revence"
+                className="object-cover w-35 h-35"
+              />
+              <p>Honest House</p>
+            </div>
+          </Link>
         </div>
+        <section ref={ref} className="flex flex-row justify-around w-full bg-linear-to-br from-slate-950 to-sky-500 p-5 md:p-10 md:mb-15 mb-5">
+          <div className="grid justify-items-center p-4">
+                <Counter target={1500} start={isInView} />
+           <p className="text-white md:text-xl text-md ">Happy Clients</p>
+          </div>
+          <div className="grid justify-items-center p-4">
+                <Counter target={124} start={isInView} />
+           <p className="text-white md:text-xl text-md ">Invests</p>
+          </div>
+          <div className="grid justify-items-center p-4">
+                <Counter target={110} start={isInView} />
+           <p className="text-white md:text-xl text-md ">Investors</p>
+          </div>
+          <div className="grid justify-items-center p-4">
+                <Counter target={4} start={isInView} />
+           <p className="text-white md:text-xl text-md ">Years</p>
+          </div>
+        </section>
       </div>
       <div id="Packs" className="flex flex-col scroll-mt-24 justify-center items-center mb-12 relative p-4">
         <img
@@ -219,7 +282,7 @@ export default function Main() {
             />
           </div>
         </div>
-        <div className="flex justify-center items-center mb-12">
+        <div id="CU" className="flex justify-center scroll-mt-24 items-center mb-12">
           <ContactUs/>
         </div>
 

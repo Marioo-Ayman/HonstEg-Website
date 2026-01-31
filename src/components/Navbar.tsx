@@ -5,7 +5,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from '@/assets/honestEGLogo_dbrd.png';
-
+import { Link } from "react-router-dom";
 const navItems = ['Home', 'Services', 'About'];
 
 // export default function Navbar() {
@@ -83,11 +83,9 @@ const navItems = ['Home', 'Services', 'About'];
 const Navbar = () => {
   const navLinks = [
     { label: 'HOME', href: '#' },
-    { label: 'ABOUT', href: '#' },
-    { label: 'AFFILIATES', href: '#' },
-    { label: 'PLANS', href: '#' },
-    { label: 'BLOG', href: '#' },
-    { label: 'CONTACT', href: '#' },
+    { label: 'ABOUT', href: '#About' },
+    { label: 'Packages', href: '#Packs' },
+    { label: 'CONTACT', href: '#CU' },
   ];
 const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -130,27 +128,34 @@ const [isSticky, setIsSticky] = useState(false);
           }}
         >
           {/* Logo */}
-          <div className="flex items-center gap-2">
-         <img src={Logo} alt="logo" className='h-12.5' />
-            <span className="text-[#ffffff] font-bold text-lg">Honest Egy</span>
-          </div>
+           <Link to="/">
+              <div className="flex items-center gap-2">
+                <img src={Logo} alt="logo" className='h-12.5' />
+                <span className="text-[#ffffff] font-bold text-lg">Honest Egy</span>
+              </div>
+           </Link>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link, index) => (
-              <span
-                key={link.label}
-                className="opacity-0 animate-link-drop text-white  font-medium cursor-pointer  hover:text-[#FFB300]"
-                style={{
-                  animationDelay: `${0.3 + index * 0.1}s`,
-                }}
-              >
-                {link.label}
-              </span>
+              // <Link to="/">
+                <a
+                  href={link.href}
+                  key={link.label}
+                  className="opacity-0 animate-link-drop text-white  font-medium cursor-pointer  hover:text-[#FFB300]"
+                  style={{
+                    animationDelay: `${0.3 + index * 0.1}s`,
+                  }}
+                  
+                >
+                  {link.label}
+                </a>
+              // </Link>
             ))}
           </div>
 
           {/* Join Us Button */}
+          <Link to="/invest">
           <Button
             variant="outlined"
             sx={{
@@ -169,10 +174,10 @@ const [isSticky, setIsSticky] = useState(false);
                 borderColor: '#FFB300',
               },
             }}
-            href="#Packs"
           >
             Join Us
-          </Button>
+          </Button></Link>
+          
               {/* Mobile Toggle */}
             <IconButton
               color="inherit"

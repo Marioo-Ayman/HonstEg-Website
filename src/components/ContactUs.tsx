@@ -4,14 +4,14 @@ import {Button} from '@mui/material';
 
 export default function ContactUs() {
   return (
-    <div className="flex m-4 flex-col md:flex-row w-3/4 ">
+    <div className="flex m-4 flex-col md:flex-row md:w-3/4 justify-items-center">
       <div>
-        <img src={Contact} alt="contact us image" className="w-3/4 " />
+        <img src={Contact} alt="contact us image" className="scale-80" />
       </div>
-      <div className="flex flex-col gap-6 items-center border-0 shadow-2xl p-5 mb-2 w-105 rounded-2xl ">
+      <div className="flex flex-col gap-6 items-center border-0 shadow-2xl p-5 mb-2 md:w-105 rounded-2xl ">
         <p className='text-xl md:text-3xl font-medium  bg-linear-to-r from-amber-500 to-amber-600 text-transparent bg-clip-text inline-block'>Send us a Massege</p>
         <TextField
-          id="standard-basic"
+          id="Full-name"
           color="warning"
           label="Name"
           variant="standard"
@@ -26,7 +26,7 @@ export default function ContactUs() {
           }}
         />
         <TextField
-          id="standard-basic"
+          id="Email"
           color="warning"
           label="Email"
           variant="standard"
@@ -41,7 +41,7 @@ export default function ContactUs() {
           }}
         />
         <TextField
-          id="outlined-multiline-flexible"
+          id="Massege"
           label="Massege"
           multiline
           variant="standard"
