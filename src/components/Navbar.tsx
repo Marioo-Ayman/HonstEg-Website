@@ -238,21 +238,44 @@ const Navbar = () => {
         open={mobileOpen}
         onClose={handleDrawerToggle}
         PaperProps={{
-          sx: { width: 250, bgcolor: "secondary.main", color: "#fff" },
+          sx: { width: 250, bgcolor: "#0f172b", color: "#fff" },
         }}
       >
         <List>
-          {navItems.map((item) => (
-            <ListItem key={item} disablePadding>
-              <ListItemButton onClick={handleDrawerToggle}>
-                <ListItemText primary={item} />
-              </ListItemButton>
+            <ListItem disablePadding>
+              <Link to="/#home">
+                <ListItemButton onClick={handleDrawerToggle}>
+                  <ListItemText primary="Home" />
+                </ListItemButton>
+              </Link>
             </ListItem>
-          ))}
+            <ListItem disablePadding>
+              <Link to="/#about">
+                <ListItemButton onClick={handleDrawerToggle}>
+                  <ListItemText primary="About" />
+                </ListItemButton>
+              </Link>
+            </ListItem>
+            <ListItem disablePadding>
+              <Link to="/#packs">
+                <ListItemButton onClick={handleDrawerToggle}>
+                  <ListItemText primary="Packages" />
+                </ListItemButton>
+              </Link>
+            </ListItem>
+            <ListItem disablePadding>
+              <Link to="/our-companies">
+                <ListItemButton onClick={handleDrawerToggle}>
+                  <ListItemText primary="Our Companies" />
+                </ListItemButton>
+              </Link>
+            </ListItem>
           <Box sx={{ p: 2 }}>
-            <Button variant="contained" fullWidth color="primary">
-              Contact Us
-            </Button>
+            <Link to="/#contact">
+              <Button onClick={handleDrawerToggle} variant="contained" fullWidth color="primary">
+                Contact Us
+              </Button>
+            </Link>
           </Box>
         </List>
       </Drawer>
