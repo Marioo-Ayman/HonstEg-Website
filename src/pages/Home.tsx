@@ -131,8 +131,6 @@ export default function Home() {
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    // Smooth scroll to top
-    // window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <main className="">
