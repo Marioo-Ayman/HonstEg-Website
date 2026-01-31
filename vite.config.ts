@@ -13,7 +13,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/HonstEg-Website",
+  base: "/",
    resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
