@@ -1,7 +1,7 @@
 // components/ImageUploadField.tsx
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { useField, useFormikContext } from 'formik';
+import { useField} from 'formik';
 import {
   Box,
   Typography,
@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import ImageIcon from '@mui/icons-material/Image';
+// import ImageIcon from '@mui/icons-material/Image';
 
 interface ImageUploadFieldProps {
   name: string;
@@ -27,7 +27,7 @@ export const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
   maxSize = 5 * 1024 * 1024, // 5MB
   accept = 'image/*',
 }) => {
-  const [field, meta, helpers] = useField<File | null>(name);
+  const [, meta, helpers] = useField<File | null>(name);
   const [preview, setPreview] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
 

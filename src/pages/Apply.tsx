@@ -25,7 +25,6 @@ const initialValues: ApplyFormValues = {
     },
   ],
 };
-  const [open, setOpen] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
 
@@ -45,7 +44,6 @@ const initialValues: ApplyFormValues = {
           await submitToFormspree(values);
           setSubmitting(false);
           setShowConfirmation(true)
-          setOpen(true);
           // alert("Application submitted!");
         }}
       >
@@ -120,7 +118,8 @@ const initialValues: ApplyFormValues = {
             </div>
             <div >
               <FieldArray name="packages">
-                {({ push }) => (
+                {({  }) => (
+                  // push
                   <>
                     <h1 className='p-1 bg-linear-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>Packes</h1>
                     {values.packages.map((pkg, i) => (
