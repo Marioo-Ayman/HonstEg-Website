@@ -26,8 +26,8 @@ const Navbar = () => {
   const navbarAnimationClass = isArabic
   ? "animate-navbar-enter-rtl"
   : "animate-navbar-enter";
-  const toggleLanguage = () => {
-  const newLang = isArabic ? "en" : "ar";
+const toggleLanguage = () => {
+  const newLang = i18n.language === "ar" ? "en" : "ar";
   i18n.changeLanguage(newLang);
   localStorage.setItem("lang", newLang);
 };
@@ -92,7 +92,7 @@ useEffect(() => {
               ].map((item, index) => (
                 <Link key={item.key} to={item.to}>
                   <p
-            className={`opacity-0 ${isArabic ? "animate-link-drop-rtl" : "animate-link-drop"} text-white font-medium cursor-pointer hover:text-[#FFB300]`}
+            className={`opacity-0 ${isArabic ? "animate-link-drop-rtl" : "animate-link-drop"} text-white font-medium text-xl cursor-pointer hover:text-[#FFB300]`}
                     style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                   >
                     {t(`nav.${item.key}`)}

@@ -1,9 +1,9 @@
-
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 import en from "@/i18n/locals/en.json";
 import ar from "@/i18n/locals/ar.json";
-import i18n from 'i18next';
 
-import { initReactI18next } from 'react-i18next';
+const savedLang = localStorage.getItem("lang") || "ar";
 
 i18n
   .use(initReactI18next)
@@ -12,8 +12,8 @@ i18n
       en: { translation: en },
       ar: { translation: ar },
     },
-    lng: localStorage.getItem('language') || 'en',
-    fallbackLng: 'en',
+    lng: savedLang,
+    fallbackLng: "en",
     interpolation: {
       escapeValue: false,
     },

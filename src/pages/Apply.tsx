@@ -1,161 +1,182 @@
-// import Bg from '@/assets/business-man.jpg';
-import {Button, TextField, InputAdornment} from '@mui/material';
-import { Formik, Form, FieldArray} from "formik";
+import { useTranslation } from "react-i18next";
+import { Button, TextField, InputAdornment } from '@mui/material';
+import { Formik, Form, FieldArray } from "formik";
 import { applySchema } from "@/Schema";
-import type {ApplyFormValues} from "@/types/Types";
-import {submitToFormspree} from "@/submit"
+import type { ApplyFormValues } from "@/types/Types";
+import { submitToFormspree } from "@/submit";
 import { ImageUploadField } from '@/components/ImageUploadField';
-import ConfirmationCard from "@/components/ConfirmCard"
+import ConfirmationCard from "@/components/ConfirmCard";
 import { useState } from "react";
 
 export default function Apply() {
-   
+  const { t,i18n } = useTranslation();
+  // const isRTL = i18n.language === "ar";
 
-const initialValues: ApplyFormValues = {
-  fName: "",
-  lName: "",
-  email: "",
-  phone: "",
-  civilID: "",
-  packages: [
-    {
-      packageId: "gold",
-      packageName: "Gold Package",
-      investmentAmount: 0,
-    },
-  ],
-};
+  const initialValues: ApplyFormValues = {
+    fName: "",
+    lName: "",
+    email: "",
+    phone: "",
+    civilID: "",
+    packages: [
+      {
+        packageId: "gold",
+        packageName: "Gold Package",
+        investmentAmount: 0,
+      },
+    ],
+  };
+
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-
   return (
-    <div className='flex relative justify-center items-center overflow-hidden bg-linear-to-b from-[#F7F9FC] to-[#EEF2F7] '>
+    <div className='flex relative justify-center items-center overflow-hidden bg-gradient-to-b from-[#F7F9FC] to-[#EEF2F7]'>
       <div className='h-19 bg-slate-900 w-full absolute top-0 left-0'></div>
-      {/* <img
-        src={Bg}
-        alt="Background"
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10 blur-xs transform scale-105 "
-      /> */}
-      <Formik   
+
+      <Formik
         initialValues={initialValues}
         validationSchema={applySchema}
         onSubmit={async (values, { setSubmitting }) => {
-           console.log("Submitted values:", values);
+          console.log("Submitted values:", values);
           await submitToFormspree(values);
           setSubmitting(false);
-          setShowConfirmation(true)
-          // alert("Application submitted!");
+          setShowConfirmation(true);
         }}
       >
         {({ values, handleChange, handleBlur, errors, touched, isSubmitting }) => (
-          
-          <Form className='md:w-3/5  flex-col border-0 gap-3 shadow-2xl rounded-3xl flex p-10 bg-[#FFFFF] mt-30 mb-20'>
-            {/* user fields */}
-            <div>
-              <div className='p-1'><h1 className='bg-linear-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>Upload Your Image</h1></div>
-              <p className=''>- Important : Your photo must be CLEAR for verification </p>
-              <p>- Blurry or low-quality imags will be rejected </p>
-              <p>- your face must be clearly visibl and recognizable </p>
-            </div>
-                <ImageUploadField
-                  name="image"
-                  label="Upload Profile Image"
-                  maxSize={5 * 1024 * 1024} // 5MB
-                  accept="image/*"
-                />
-            <div className='p-1'><h1 className='bg-linear-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>USer Info</h1></div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-              <TextField
-              id="outlined"
-              name="fName"              // must match initialValues
-              label="First Name"
-              value={values.fName || ""}
-              onChange={handleChange}          
-              onBlur={handleBlur}  // important for “touched”
-              error={touched.fName && Boolean(errors.fName)}  // red border
-              helperText={touched.fName && errors.fName} 
-              /> 
-              <TextField
-              id="outlined"
-              name="lName"              // must match initialValues
-              label="Last Name"
-              value={values.lName || ""}
-              onChange={handleChange}          
-              onBlur={handleBlur}  // important for “touched”
-              error={touched.lName && Boolean(errors.lName)}  // red border
-              helperText={touched.lName && errors.lName} 
-              /> 
-              <TextField
-              name="phone"              // must match initialValues
-              id="outlined-required"
-              label="Phone Number"
-              value={values.phone || ""}
-              onChange={handleChange}
-              onBlur={handleBlur}  // important for “touched”
-              error={touched.phone && Boolean(errors.phone)}  // red border
-              helperText={touched.phone && errors.phone} 
-              /> 
-              <TextField
-              name="email"              // must match initialValues
-              id="outlined"
-              label="Email Address"
-              value={values.email || ""}
-              onChange={handleChange}
-              onBlur={handleBlur}  // important for “touched”
-              error={touched.email && Boolean(errors.email)}  // red border
-              helperText={touched.email && errors.email} 
-              /> 
-              <TextField
-              name="civilID"              // must match initialValues
-              id="outlined"
-              label="National ID"
-              value={values.civilID || ""}
-              onChange={handleChange}
-              onBlur={handleBlur}  // important for “touched”
-              error={touched.civilID && Boolean(errors.civilID)}  // red border
-              helperText={touched.civilID && errors.civilID} 
-              /> 
-            </div>
+          <Form className='md:w-3/5 flex-col border-0 gap-3 shadow-2xl rounded-3xl flex p-10 bg-white mt-30 mb-20'>
+            {/* Image Upload Section */}
             <div >
+              <div className='p-1'>
+                <h1 className='bg-gradient-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>
+                  {t("apply.imageUpload.title")}
+                </h1>
+              </div>
+              <p className='text-gray-700'>
+                - {t("apply.imageUpload.important")}
+              </p>
+              <p className='text-gray-700'>
+                - {t("apply.imageUpload.rule1")}
+              </p>
+              <p className='text-gray-700'>
+                - {t("apply.imageUpload.rule2")}
+              </p>
+            </div>
+
+            <ImageUploadField
+              name="image"
+              label={t("apply.imageUpload.uploadLabel")}
+              maxSize={5 * 1024 * 1024} // 5MB
+              accept="image/*"
+            />
+
+            {/* User Info Section */}
+            <div className='p-1'>
+              <h1 className='bg-gradient-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>
+                {t("apply.userInfo.title")}
+              </h1>
+            </div>
+
+            <div  key={i18n.language}  className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+              <TextField
+                id="outlined-fname"
+                name="fName"
+                label={t("apply.userInfo.firstName")}
+                value={values.fName || ""}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.fName && Boolean(errors.fName)}
+                helperText={touched.fName && errors.fName}
+              />
+
+              <TextField
+         
+                id="outlined-lname"
+                name="lName"
+                label={t("apply.userInfo.lastName")}
+                value={values.lName || ""}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.lName && Boolean(errors.lName)}
+                helperText={touched.lName && errors.lName}
+              />
+
+              <TextField
+                name="phone"
+                id="outlined-phone"
+                label={t("apply.userInfo.phone")}
+                value={values.phone || ""}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.phone && Boolean(errors.phone)}
+                helperText={touched.phone && errors.phone}
+              />
+
+              <TextField
+                name="email"
+                id="outlined-email"
+                label={t("apply.userInfo.email")}
+                value={values.email || ""}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.email && Boolean(errors.email)}
+                helperText={touched.email && errors.email}
+                      />
+
+              <TextField
+                name="civilID"
+                id="outlined-civilid"
+                label={t("apply.userInfo.nationalId")}
+                value={values.civilID || ""}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.civilID && Boolean(errors.civilID)}
+                helperText={touched.civilID && errors.civilID}
+              />
+            </div>
+
+            {/* Packages Section */}
+            <div>
               <FieldArray name="packages">
-                {({  }) => (
-                  // push
+                {({ }) => (
                   <>
-                    <h1 className='p-1 bg-linear-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>Packes</h1>
+                    <h1 className='p-1 bg-gradient-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>
+                      {t("apply.packages.title")}
+                    </h1>
                     {values.packages.map((pkg, i) => (
-                      <div key={pkg.packageId}>
-                        <p className='m-2 '>Pack Name : {pkg.packageName}</p>
+                      <div key={pkg.packageId} >
+                        <p className='m-2'>
+                          {t("apply.packages.packName")}: {pkg.packageName}
+                        </p>
                         <TextField
                           name={`packages.${i}.investmentAmount`}
-                          label = "Investment Amout"    
+                          label={t("apply.packages.investmentAmount")}
                           value={values.packages[i].investmentAmount || ""}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                           slotProps={{
-                                  input: {
-                                    endAdornment: <InputAdornment position="end">$USD</InputAdornment>,
-                                  },}}               
+                          slotProps={{
+                            input: {
+                              endAdornment: (
+                                <InputAdornment position="end">
+                                  {t("apply.packages.currency")}
+                                </InputAdornment>
+                              ),
+                            },
+                          }}
                         />
+                        <div className="mt-5">
+                          <p>Drop Your link Here</p>
+                          <TextField id="outlined-basic" label="Link" variant="outlined" />
+                        </div>
                       </div>
                     ))}
-                    {/* <Button
-                      type="button"
-                      onClick={() =>
-                        push({
-                          packageId: "silver",
-                          packageName: "Silver Package",
-                          amount: 0,
-                        })
-                      }
-                    >
-                      Invest More
-                    </Button> */}
                   </>
                 )}
               </FieldArray>
             </div>
-            {/* <div className='flex justify-center'>  */}
-              <Button 
+
+            {/* Submit Button */}
+            <Button
               variant="outlined"
               type="submit"
               disabled={isSubmitting}
@@ -176,22 +197,21 @@ const initialValues: ApplyFormValues = {
                   borderColor: "#FFB300",
                 },
               }}
-              >
-                Submit
-              </Button>
-            {/* </div> */}
+            >
+              {t("apply.buttons.submit")}
+            </Button>
           </Form>
         )}
       </Formik>
-               {showConfirmation && (
-                <div className='z-1'>
 
-                  <ConfirmationCard
-                    onClose={() => setShowConfirmation(false)}
-                    buyMoreUrl="/packages"
-                  />
-                </div>
-              )}
+      {showConfirmation && (
+        <div className='z-1'>
+          <ConfirmationCard
+            onClose={() => setShowConfirmation(false)}
+            buyMoreUrl="/packages"
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -204,11 +204,11 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import Bg1 from "@/assets/Bg1.jpeg";
+import Bg1 from "@/assets/transformed.webp";
 import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 import MovingIcon from "@mui/icons-material/Moving";
 import BM from "@/assets/business-man.jpg";
-import BT from "@/assets/bitcoin.jpg";
+import BT from "@/assets/istock.jpeg";
 import {
   fadeInUp,
   slideInLeft,
@@ -260,12 +260,6 @@ export default function About() {
           >
             <motion.p
               variants={textLine}
-              className="text-5xl md:text-9xl font-thin text-white mb-8"
-            >
-              {t("about.hero.takeYour")}
-            </motion.p>
-            <motion.p
-              variants={textLine}
               className="text-5xl md:text-9xl font-medium text-[#FFB300] mb-8"
             >
               {t("about.hero.investStrategy")}
@@ -282,8 +276,6 @@ export default function About() {
 
       {/* Vision Section */}
       <section className="w-full bg-linear-to-b from-gray-50 to-white py-16 px-4 md:px-8 lg:px-12 relative">
-        <div className="absolute left-0 right-0 top-0 h-1 bg-gray-800" />
-
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 md:gap-8 lg:grid-cols-2 lg:items-center">
             {/* Left Content */}
@@ -295,10 +287,11 @@ export default function About() {
               variants={slideInLeft(isRTL)}
             >
               {/* Icon */}
+              <div className="flex flex-row items-baseline">
               <motion.div
                 className="flex h-16 w-16 items-center justify-center rounded-full bg-cyan-500"
                 variants={iconFloat}
-                whileHover={{ scale: 1.2, rotate: 360 }}
+                whileHover={{ scale: 1.1, rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
                 <TrackChangesIcon className="h-8 w-8 text-white" />
@@ -311,6 +304,8 @@ export default function About() {
               >
                 {t("about.vision.title")}
               </motion.h2>
+              </div>
+              
 
               {/* Description */}
               <motion.p
@@ -395,8 +390,6 @@ export default function About() {
 
       {/* Mission Section */}
       <section className="w-full bg-linear-to-b from-gray-50 to-white py-16 px-4 md:px-8 lg:px-12 relative">
-        <div className="absolute left-0 right-0 top-0 h-1 bg-gray-800" />
-
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 md:gap-8 lg:grid-cols-2 lg:items-center">
             {/* Left Image */}
@@ -409,7 +402,7 @@ export default function About() {
             >
               <motion.img
                 src={BT}
-                alt="Bitcoin Investment"
+                alt=" Investment"
                 className="h-auto w-full rounded-2xl object-cover shadow-lg md:max-w-md lg:max-w-lg"
                 variants={imageReveal}
                 whileHover={{ scale: 1.05 }}
@@ -425,23 +418,26 @@ export default function About() {
               viewport={{ once: true, amount: 0.3 }}
               variants={slideInRight(isRTL)}
             >
-              {/* Icon */}
-              <motion.div
-                className="flex h-16 w-16 items-center justify-center rounded-full bg-cyan-500"
-                variants={iconFloat}
-                whileHover={{ scale: 1.2, rotate: 360 }}
-                transition={{ duration: 0.6 }}
-              >
-                <MovingIcon className="h-8 w-8 text-white" />
-              </motion.div>
+              <div className="flex flex-row items-baseline">
+                {/* Icon */}
+                <motion.div
+                  className="flex h-16 w-16 items-center justify-center rounded-full bg-cyan-500"
+                  variants={iconFloat}
+                  whileHover={{ scale: 1.2, rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <MovingIcon className="h-8 w-8 text-white" />
+                </motion.div>
 
-              {/* Title */}
-              <motion.h2
-                variants={fadeInUp}
-                className="text-3xl font-bold text-gray-900 md:text-4xl"
-              >
-                {t("about.mission.title")}
-              </motion.h2>
+                {/* Title */}
+                <motion.h2
+                  variants={fadeInUp}
+                  className="text-3xl font-bold text-gray-900 md:text-4xl"
+                >
+                  {t("about.mission.title")}
+                </motion.h2>
+              </div>
+
 
               {/* Description */}
               <motion.p

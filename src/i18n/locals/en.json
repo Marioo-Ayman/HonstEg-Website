@@ -167,9 +167,8 @@
     "copyright": "© {{year}} Honest Egy. All rights reserved."
   },"about": {
     "hero": {
-      "takeYour": "Take Your",
-      "investStrategy": "Invest Strategy",
-      "toNextLevel": "TO THE NEXT LEVEL"
+      "investStrategy": "Experience ",
+      "toNextLevel": "You can trust"
     },
     "vision": {
       "title": "Our Vision",
@@ -245,6 +244,34 @@
     "hr": {
       "name": "HR ACADEMY",
       "description": "We equip individuals and organizations with the knowledge and practical skills in business, trading, marketing, and technology — empowering them to achieve lasting success in a fast-changing world."
+    }
+  },
+  "apply": {
+    "pageTitle": "Investment Application",
+    "imageUpload": {
+      "title": "Upload Your Image",
+      "important": "Important: Your photo must be CLEAR for verification",
+      "rule1": "Blurry or low-quality images will be rejected",
+      "rule2": "Your face must be clearly visible and recognizable",
+      "uploadLabel": "Upload Profile Image"
+    },
+    "userInfo": {
+      "title": "User Info",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "nationalId": "National ID"
+    },
+    "packages": {
+      "title": "Packages",
+      "packName": "Pack Name",
+      "investmentAmount": "Investment Amount",
+      "currency": "$USD"
+    },
+    "buttons": {
+      "submit": "Submit",
+      "investMore": "Invest More"
     }
   }
 }

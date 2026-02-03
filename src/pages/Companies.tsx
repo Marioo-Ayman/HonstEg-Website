@@ -240,7 +240,7 @@ export default function Companies() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <motion.p
-              className="text-2xl md:text-4xl font-medium text-white mb-8"
+              className="text-2xl md:text-5xl font-medium text-white mb-8"
               initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -277,7 +277,7 @@ export default function Companies() {
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-md text-gray-700"
+              className="text-lg text-gray-700"
             >
               {t("companies.intro.description")}
             </motion.p>
@@ -359,14 +359,14 @@ export default function Companies() {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   {t("companies.hfb.name")}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 text-md leading-relaxed mb-6">
                   {t("companies.hfb.description1")}
                 </p>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 text-md leading-relaxed mb-6">
                   {t("companies.hfb.description2")}
                 </p>
                 <h3 className="font-semibold mb-2">{t("companies.hfb.summaryTitle")}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 text-md leading-relaxed mb-6">
                   {t("companies.hfb.summary")}
                 </p>
               </motion.div>
@@ -382,63 +382,7 @@ export default function Companies() {
             variants={scrollFadeIn}
           >
             <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-0 ${isRTL ? "" : "md:flex-row-reverse"}`}>
-              {/* Content Section */}
-              <motion.div
-                className="flex-1 w-full md:w-2/3"
-                variants={slideInLeft(isRTL)}
-              >
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  {t("companies.hh.name")}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                  {t("companies.hh.description")}
-                </p>
-
-                {/* Bullet Points */}
-                <ul className="space-y-3 ml-2">
-                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "flex-row-reverse text-right" : ""}`}>
-                    <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
-                    <div className={isRTL ? "text-right" : ""}>
-                      <span className="font-semibold">{t("companies.hh.mission")} </span>
-                      <span className="text-gray-600 text-sm leading-relaxed">
-                        {t("companies.hh.missionText")}
-                      </span>
-                    </div>
-                  </li>
-                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "flex-row-reverse text-right" : ""}`}>
-                    <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
-                    <div className={isRTL ? "text-right" : ""}>
-                      <span className="font-semibold">{t("companies.hh.values")} </span>
-                      <span className="text-gray-600 text-sm leading-relaxed">
-                        {t("companies.hh.valuesText")}
-                      </span>
-                    </div>
-                  </li>
-                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "flex-row-reverse text-right" : ""}`}>
-                    <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
-                    <div className={isRTL ? "text-right" : ""}>
-                      <span className="font-semibold">{t("companies.hh.services")} </span>
-                      <span className="text-gray-600 text-sm leading-relaxed">
-                        {t("companies.hh.servicesText")}
-                      </span>
-                    </div>
-                  </li>
-                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "flex-row-reverse text-right" : ""}`}>
-                    <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
-                    <div className={isRTL ? "text-right" : ""}>
-                      <span className="font-semibold">{t("companies.hh.team")} </span>
-                      <span className="text-gray-600 text-sm leading-relaxed">
-                        {t("companies.hh.teamText")}
-                      </span>
-                    </div>
-                  </li>
-                </ul>
-                <p className="text-gray-600 text-sm leading-relaxed mt-4">
-                  {t("companies.hh.closing")}
-                </p>
-              </motion.div>
-
-              {/* Logo Section */}
+                              {/* Logo Section */}
               <motion.div
                 className="shrink-0 w-full md:w-1/3 flex justify-center"
                 variants={fadeInUp}
@@ -456,6 +400,63 @@ export default function Companies() {
                   />
                 </motion.div>
               </motion.div>
+              {/* Content Section */}
+              <motion.div
+                className="flex-1 w-full md:w-2/3"
+                variants={slideInLeft(isRTL)}
+              >
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  {t("companies.hh.name")}
+                </h3>
+                <p className="text-gray-600 text-md leading-relaxed mb-6">
+                  {t("companies.hh.description")}
+                </p>
+
+                {/* Bullet Points */}
+                <ul className="space-y-3 ml-2">
+                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
+                    <div className={isRTL ? "" : ""}>
+                      <span className="font-semibold">{t("companies.hh.mission")} </span>
+                      <span className="text-gray-600 text-md leading-relaxed">
+                        {t("companies.hh.missionText")}
+                      </span>
+                    </div>
+                  </li>
+                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
+                    <div className={isRTL ? "text-right" : ""}>
+                      <span className="font-semibold">{t("companies.hh.values")} </span>
+                      <span className="text-gray-600 text-md leading-relaxed">
+                        {t("companies.hh.valuesText")}
+                      </span>
+                    </div>
+                  </li>
+                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
+                    <div className={isRTL ? "text-right" : ""}>
+                      <span className="font-semibold">{t("companies.hh.services")} </span>
+                      <span className="text-gray-600 text-md leading-relaxed">
+                        {t("companies.hh.servicesText")}
+                      </span>
+                    </div>
+                  </li>
+                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
+                    <div className={isRTL ? "text-right" : ""}>
+                      <span className="font-semibold">{t("companies.hh.team")} </span>
+                      <span className="text-gray-600 text-md leading-relaxed">
+                        {t("companies.hh.teamText")}
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+                <p className="text-gray-600 text-md leading-relaxed mt-4">
+                  {t("companies.hh.closing")}
+                </p>
+              </motion.div>
+
+              
             </div>
           </motion.div>
 
@@ -495,7 +496,7 @@ export default function Companies() {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   {t("companies.hr.name")}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 text-md leading-relaxed mb-6">
                   {t("companies.hr.description")}
                 </p>
               </motion.div>
