@@ -361,7 +361,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {sectorsData.map((sector, index) => (
+          {sectorsData.map((sector) => (
             <motion.div
               key={sector}
               variants={staggerItem}
