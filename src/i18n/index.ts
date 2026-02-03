@@ -2,6 +2,7 @@
 import en from "@/i18n/locals/en.json";
 import ar from "@/i18n/locals/ar.json";
 import i18n from 'i18next';
+
 import { initReactI18next } from 'react-i18next';
 
 i18n
