@@ -4,13 +4,16 @@ import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import Logo from '@/assets/honestEGLogo_dbrd.png';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="relative bg-slate-900 text-white">
       {/* Wavy Top Border */}
-      <div className="absolute top-0 left-0 right-0 overflow-hidden h-16 -mt-1">
+      <div className="absolute top-0 ltr:left-0 rtl:right-0 right-0 overflow-hidden h-16 -mt-1">
         <svg
           viewBox="0 0 1000 100"
           preserveAspectRatio="none"
@@ -40,99 +43,88 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src={Logo} alt="Honest Egy" className='w-1/3 h-1/3' />
-                <span className="text-white font-bold text-sm">Honest Egy</span>
-
+              <img src={Logo} alt="Honest Egy" className="w-1/3 h-1/3" />
+              <span className="text-white font-bold text-sm">Honest Egy</span>
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed">Start your investment and trading journey with Honest EG Group of Companies            </p>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {t('footer.companyDescription')}
+            </p>
             <div className="flex gap-3">
-              {/* <a
-                href="#"
-                className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a> */}
-              <a
-                href="https://www.facebook.com/Honestegy.investment"
+              <Link
+                to="https://www.facebook.com/Honestegy.investment"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                aria-label="LinkedIn"
+                aria-label={t('footer.social.facebook')}
               >
                 <FacebookOutlinedIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="https://honestegy.net/"
+              </Link>
+              <Link
+                to="https://honestegy.net/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                aria-label="Instagram"
+                aria-label={t('footer.social.website')}
               >
                 <InsertLinkOutlinedIcon className="w-5 h-5" />
-              </a>
+              </Link>
             </div>
           </div>
 
-          {/* Navigation Links */}
-          
-
-          {/* Services */}
+          {/* About Us Section */}
           <div>
-            <h4 className="font-bold text-lg mb-4">About us</h4>
+            <h4 className="font-bold text-lg mb-4">{t('footer.aboutUs.title')}</h4>
             <ul className="space-y-2">
-              <Link to="/About-Us">
               <li>
-                <a href="#About" className="text-slate-300 hover:text-white transition-colors text-sm">
-                  – About Company
-                </a>
-              </li>
-              </Link>
-              <li>
-                <a href="#Packs" className="text-slate-300 hover:text-white transition-colors text-sm">
-                  – Packages
-                </a>
-              </li>
-              
-              <li>
-                <Link to="/our-companies">
-                  <p  className="text-slate-300 hover:text-white transition-colors text-sm">
-                    – Our Companies
-                  </p>
+                <Link to="/About-Us">
+                  <span className="text-slate-300 hover:text-white transition-colors text-sm">
+                    – {t('footer.aboutUs.aboutCompany')}
+                  </span>
                 </Link>
               </li>
-      
+              <li>
+                <Link
+                  to="/#packs"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  – {t('footer.aboutUs.packages')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/our-companies">
+                  <span className="text-slate-300 hover:text-white transition-colors text-sm">
+                    – {t('footer.aboutUs.ourCompanies')}
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
 
+          {/* Location Section */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Location</h4>
+            <h4 className="font-bold text-lg mb-4">{t('footer.location.title')}</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-slate-300 hover:text-white transition-colors text-sm">
-                   <RoomOutlinedIcon className="w-5 h-5" />
-                   المقطم الهضبه الوسطى 99 بتقسيم الزهور- القاهرة
-
-                </a>
+                <div className="flex items-start gap-2 text-slate-300 text-sm">
+                  <RoomOutlinedIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                  <span>{t('footer.location.cairo')}</span>
+                </div>
               </li>
               <li>
-                <a href="#" className="text-slate-300 hover:text-white transition-colors text-sm">
-                    <RoomOutlinedIcon className="w-5 h-5" />
-                   81 أ شارع سيدي جابر – الإسكندرية
-
-                </a>
+                <div className="flex items-start gap-2 text-slate-300 text-sm">
+                  <RoomOutlinedIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                  <span>{t('footer.location.alexandria')}</span>
+                </div>
               </li>
-      
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Contact Info</h4>
-    
+            <h4 className="font-bold text-lg mb-4">{t('footer.contact.title')}</h4>
             <div className="space-y-3">
               <a
-                href="tel:+20 1122258164"
+                href="tel:+201122258164"
                 className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors text-sm"
               >
                 <PhoneOutlinedIcon className="w-4 h-4" />
@@ -140,7 +132,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:contact@honestegy.net"
-                className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors text-sm"
+                className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors text-sm break-all"
               >
                 <MailOutlinedIcon className="w-4 h-4" />
                 contact@honestegy.net
@@ -152,7 +144,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-700">
           <p className="text-center text-sm text-slate-400">
-            © 2026 Honest Egy. All rights reserved.
+            {t('footer.copyright', { year: 2026 })}
           </p>
         </div>
       </div>

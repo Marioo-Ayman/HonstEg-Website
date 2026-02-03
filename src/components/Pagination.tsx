@@ -1,6 +1,7 @@
-
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/context/Languagecontext';
 
 interface PaginationProps {
   currentPage: number;
@@ -9,6 +10,13 @@ interface PaginationProps {
 }
 
 export function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
+  const { t } = useTranslation();
+  const { isRTL } = useLanguage();
+
+  // In RTL, "previous" means right arrow, "next" means left arrow
+  const PrevIcon = isRTL ? ChevronRightIcon : ChevronLeftIcon;
+  const NextIcon = isRTL ? ChevronLeftIcon : ChevronRightIcon ;
+
   return (
     <div className="flex items-center justify-center gap-2 mt-12">
       {/* Previous Button */}
@@ -22,9 +30,9 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
             : 'bg-white text-slate-700 hover:bg-slate-900 hover:text-white shadow-md hover:shadow-xl'
           }
         `}
-        aria-label="Previous page"
+        aria-label={t('pagination.previous')}
       >
-        <ChevronLeftIcon className="w-5 h-5" />
+        <PrevIcon className="w-5 h-5" />
       </button>
 
       {/* Page Numbers */}
@@ -40,6 +48,8 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
                 : 'bg-white text-slate-700 hover:bg-slate-100 shadow-md hover:shadow-lg hover:scale-105'
               }
             `}
+            aria-label={t('pagination.pageNumber', { page })}
+            aria-current={currentPage === page ? 'page' : undefined}
           >
             {page}
           </button>
@@ -57,9 +67,9 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
             : 'bg-white text-slate-700 hover:bg-slate-900 hover:text-white shadow-md hover:shadow-xl'
           }
         `}
-        aria-label="Next page"
+        aria-label={t('pagination.next')}
       >
-        <ChevronRightIcon className="w-5 h-5" />
+        <NextIcon className="w-5 h-5" />
       </button>
     </div>
   );

@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
+@font-face {
+  font-family: "GraphikArabic";
+  src: url("/fonts/GraphikArabic-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "GraphikArabic";
+  src: url("/fonts/GraphikArabic-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GraphikArabic";
+  src: url("/fonts/GraphikArabic-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 @theme {
   /* Branding Colors */
   --color-brand-primary: #00BCD4;    /* Vibrant Teal (Buttons/Accents) */
@@ -19,6 +41,15 @@ html {
   color: var(--color-brand-text-main);
   font-family: sans-serif;
 } */
+@layer base {
+  :root[lang="en"] {
+    font-family: 'Poppins', sans-serif;
+  }
+  :root[lang="ar"] {
+    font-family: 'GraphikArabic', sans-serif;
+  }
+}
+
 @layer utilities {
   @keyframes slideDown {
     from {
@@ -31,9 +62,9 @@ html {
     }
   }
 
-  @keyframes linkDrop {
+ @keyframes slideDown {
     from {
-      transform: translateY(-12px);
+      transform: translateY(-100%);
       opacity: 0;
     }
     to {
@@ -42,12 +73,55 @@ html {
     }
   }
 
+  @keyframes navbarEnterRTL {
+    from {
+      transform: translateY(-100%) translateX(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) translateX(0);
+      opacity: 1;
+    }
+  }
+
   .animate-navbar-enter {
     animation: slideDown 0.6s ease-out forwards;
   }
 
+  .animate-navbar-enter-rtl {
+    animation: navbarEnterRTL 0.6s ease-out forwards;
+  }
+
+  /* ================= LINK DROP ================= */
+
+  @keyframes linkDrop {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes linkDropRTL {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   .animate-link-drop {
-    animation: linkDrop 0.4s ease-out forwards;
+    animation: linkDrop 0.5s ease-out forwards;
+  }
+
+  .animate-link-drop-rtl {
+    animation: linkDropRTL 0.5s ease-out forwards;
   }
 }
 :root {
@@ -81,7 +155,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
   background-color: var(--color-brand-bg);
   color: var(--color-brand-text-main);
  font-family: 'Poppins', sans-serif;

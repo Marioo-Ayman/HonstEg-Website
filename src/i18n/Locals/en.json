@@ -1,0 +1,169 @@
+{
+  "brand": "Honest Egy",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "packages": "Packages",
+    "contact": "Contact",
+    "companies": "Companies",
+    "join": "Join Us"
+  },
+  "contactUs": {
+    "title": "Send us a Message",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "sendButton": "Send Message"
+  },
+  "pagination": {
+    "previous": "Previous page",
+    "next": "Next page",
+    "pageNumber": "Page {{page}}"
+  },
+  "investment": {
+    "annualReturn": "annual return",
+    "minimumInvestment": "Minimum Investment",
+    "duration": "Duration",
+    "interestRateType": "Interest Rate Type",
+    "applyNow": "Apply Now"
+  },
+  "home": {
+    "hero": {
+      "takeYour": "Take Your",
+      "investStrategy": "Invest Strategy",
+      "nextLevel": "TO THE NEXT LEVEL"
+    },
+    "about": {
+      "welcome": "Welcome to Honest Egy",
+      "title": "Words About Us",
+      "description": "A group of companies operating in several sectors, including real estate investment, gold investment, the Egyptian stock exchange and securities trading, as well as training and qualifying individuals in business, marketing, and technology."
+    },
+    "companies": {
+      "honestHouse": "Honest House"
+    },
+    "stats": {
+      "happyClients": "Happy Clients",
+      "invests": "Invests",
+      "investors": "Investors",
+      "years": "Years"
+    },
+    "investments": {
+      "subtitle": "INVESTMENT OFFER",
+      "title": "Our Investment Plans",
+      "quote": "Don't miss out on something interesting today just because you think you'll find something better tomorrow."
+    }
+  },
+  "packages": {
+    "starter": {
+      "name": "Starter",
+      "description": "Starter investment package for beginners in USD.",
+      "duration": "1 Year",
+      "paymentFrequency": "Monthly"
+    },
+    "growth": {
+      "name": "Growth",
+      "description": "Growth package for expanding portfolios.",
+      "duration": "1 Year",
+      "paymentFrequency": "Monthly"
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "Premium package with enhanced returns.",
+      "duration": "1 Year",
+      "paymentFrequency": "Monthly"
+    },
+    "elite": {
+      "name": "Elite",
+      "description": "Elite package for serious investors.",
+      "duration": "1 Year",
+      "paymentFrequency": "Monthly"
+    },
+    "flexi": {
+      "name": "Flexi Invest",
+      "description": "Flexible investment with competitive returns.",
+      "duration": "1 Year",
+      "paymentFrequency": "Monthly"
+    },
+    "visionary": {
+      "name": "Visionary",
+      "description": "Visionary package for forward-thinking investors.",
+      "duration": "1 Year",
+      "paymentFrequency": "Monthly"
+    },
+    "legendary": {
+      "name": "Legendary",
+      "description": "Legendary package for high-value investments.",
+      "duration": "1 Year",
+      "paymentFrequency": "Monthly"
+    },
+    "infinity": {
+      "name": "Infinity",
+      "description": "Conservative portfolio emphasizing capital preservation and steady income through government bonds and blue-chip dividends.",
+      "duration": "1 Year",
+      "paymentFrequency": "Monthly"
+    },
+    "supreme": {
+      "name": "Supreme",
+      "description": "Supreme package with semi-annual returns.",
+      "duration": "1 Year",
+      "paymentFrequency": "Semi-Annually"
+    },
+
+  "silver": {
+    "name": "Silver",
+    "description": "A balanced investment package offering stable monthly returns, suitable for investors seeking moderate growth with controlled risk.",
+    "duration": "1 Year",
+    "paymentFrequency": "Monthly"
+  },
+
+  "gold": {
+    "name": "Gold",
+    "description": "A growth-oriented investment package ideal for investors aiming to expand their capital through consistent monthly returns and diversified strategies.",
+    "duration": "1 Year",
+    "paymentFrequency": "Monthly"
+  },
+
+  "platinum": {
+    "name": "Platinum",
+    "description": "A premium investment package tailored for experienced investors looking for higher returns through advanced market strategies and disciplined risk management.",
+    "duration": "1 Year",
+    "paymentFrequency": "Monthly"
+  },
+
+  "diamond": {
+    "name": "Diamond",
+    "description": "A high-tier investment package designed for serious investors who seek strong performance, capital growth, and professionally managed investment forecasting.",
+    "duration": "1 Year",
+    "paymentFrequency": "Monthly"
+  },
+
+  "honestEgy": {
+    "name": "Honest Egy",
+    "description": "An exclusive elite investment package offering maximum potential returns, designed for high-value investors who demand strategic forecasting, stability, and long-term growth.",
+    "duration": "1 Year",
+    "paymentFrequency": "Monthly"
+  }
+  },
+  "footer": {
+    "companyDescription": "Start your investment and trading journey with Honest EG Group of Companies",
+    "social": {
+      "facebook": "Facebook",
+      "website": "Website"
+    },
+    "aboutUs": {
+      "title": "About us",
+      "aboutCompany": "About Company",
+      "packages": "Packages",
+      "ourCompanies": "Our Companies"
+    },
+    "location": {
+      "title": "Location",
+      "cairo": "Al-Mokattam, Middle Plateau 99, Al-Zuhour District - Cairo",
+      "alexandria": "81A Sidi Gaber Street - Alexandria"
+    },
+    "contact": {
+      "title": "Contact Info"
+    },
+    "copyright": "© {{year}} Honest Egy. All rights reserved."
+  }
+}

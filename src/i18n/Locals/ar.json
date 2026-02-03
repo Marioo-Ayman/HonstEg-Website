@@ -1,0 +1,169 @@
+{
+  "brand": "Honest إيجي",
+  "nav": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "packages": "الباقات",
+    "contact": "تواصل معنا",
+    "companies": "شركاتنا",
+    "join": "انضم إلينا"
+  },
+  "contactUs": {
+    "title": "أرسل لنا رسالة",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "message": "الرسالة",
+    "sendButton": "إرسال الرسالة"
+  },
+  "pagination": {
+    "previous": "الصفحة السابقة",
+    "next": "الصفحة التالية",
+    "pageNumber": "صفحة {{page}}"
+  },
+  "investment": {
+    "annualReturn": "عائد سنوي",
+    "minimumInvestment": "الحد الأدنى للاستثمار",
+    "duration": "المدة",
+    "interestRateType": "نوع معدل الفائدة",
+    "applyNow": "قدم الآن"
+  },
+  "home": {
+    "hero": {
+      "takeYour": "خذ",
+      "investStrategy": "استراتيجية الاستثمار",
+      "nextLevel": "إلى المستوى التالي"
+    },
+    "about": {
+      "welcome": "مرحباً بك في Honest Egy",
+      "title": "كلمات عنا",
+      "description": "مجموعة من الشركات العاملة في عدة قطاعات، بما في ذلك الاستثمار العقاري، واستثمار الذهب، والبورصة المصرية وتداول الأوراق المالية، بالإضافة إلى تدريب وتأهيل الأفراد في مجال الأعمال والتسويق والتكنولوجيا."
+    },
+    "companies": {
+      "honestHouse": "Honest House"
+    },
+    "stats": {
+      "happyClients": "عملاء سعداء",
+      "invests": "استثمارات",
+      "investors": "مستثمرون",
+      "years": "سنوات"
+    },
+    "investments": {
+      "subtitle": "عرض استثماري",
+      "title": "خطط الاستثمار لدينا",
+      "quote": "لا تفوت شيئاً مثيراً اليوم لمجرد أنك تعتقد أنك ستجد شيئاً أفضل غداً."
+    }
+  },
+  "packages": {
+    "starter": {
+      "name": "Starter",
+      "description": "باقة استثمارية للمبتدئين بالدولار الأمريكي.",
+      "duration": "سنة واحدة",
+      "paymentFrequency": "شهرياً"
+    },
+    "growth": {
+      "name": "Growth",
+      "description": "باقة النمو لتوسيع المحافظ الاستثمارية.",
+      "duration": "سنة واحدة",
+      "paymentFrequency": "شهرياً"
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "باقة مميزة بعوائد محسّنة.",
+      "duration": "سنة واحدة",
+      "paymentFrequency": "شهرياً"
+    },
+    "elite": {
+      "name": "Elite",
+      "description": "باقة النخبة للمستثمرين الجادين.",
+      "duration": "سنة واحدة",
+      "paymentFrequency": "شهرياً"
+    },
+    "flexi": {
+      "name": "Flexi Invest",
+      "description": "استثمار مرن بعوائد تنافسية.",
+      "duration": "سنة واحدة",
+      "paymentFrequency": "شهرياً"
+    },
+    "visionary": {
+      "name": "Visionary",
+      "description": "باقة رؤيوية للمستثمرين ذوي التفكير المستقبلي.",
+      "duration": "سنة واحدة",
+      "paymentFrequency": "شهرياً"
+    },
+    "legendary": {
+      "name": "Legendary",
+      "description": "باقة أسطورية للاستثمارات عالية القيمة.",
+      "duration": "سنة واحدة",
+      "paymentFrequency": "شهرياً"
+    },
+    "infinity": {
+      "name": "Infinity",
+      "description": "محفظة محافظة تركز على الحفاظ على رأس المال والدخل المستقر من خلال السندات الحكومية وأرباح الأسهم الممتازة.",
+      "duration": "سنة واحدة",
+      "paymentFrequency": "شهرياً"
+    },
+    "supreme": {
+      "name": "Supreme",
+      "description": "باقة عليا بعوائد نصف سنوية.",
+      "duration": "سنة واحدة",
+      "paymentFrequency": "نصف سنوي"
+    },
+    "silver": {
+    "name": "silver",
+    "description": "باقة استثمار متوازنة توفر عوائد شهرية ثابتة، مناسبة للمستثمرين الباحثين عن نمو معتدل مع مستوى مخاطر مدروس.",
+    "duration": "سنة واحدة",
+    "paymentFrequency": "شهريًا"
+  },
+
+  "gold": {
+    "name": "gold",
+    "description": "باقة استثمارية موجهة للنمو، مثالية لمن يسعون إلى تنمية رأس المال من خلال استراتيجيات مدروسة وعوائد شهرية منتظمة.",
+    "duration": "سنة واحدة",
+    "paymentFrequency": "شهريًا"
+  },
+
+  "platinum": {
+    "name": "platinum",
+    "description": "باقة استثمارية متقدمة مصممة للمستثمرين ذوي الخبرة، تقدم عوائد أعلى من خلال استراتيجيات سوق احترافية وإدارة مخاطر دقيقة.",
+    "duration": "سنة واحدة",
+    "paymentFrequency": "شهريًا"
+  },
+
+  "diamond": {
+    "name": "diamond",
+    "description": "باقة استثمارية عالية المستوى تستهدف المستثمرين الجادين الباحثين عن أداء قوي ونمو رأسمالي مدعوم بتوقعات استثمارية دقيقة.",
+    "duration": "سنة واحدة",
+    "paymentFrequency": "شهريًا"
+  },
+
+  "honestEgy": {
+    "name": "honestEgy",
+    "description": "باقة استثمارية حصرية للنخبة، توفر أعلى إمكانات العائد، ومصممة للمستثمرين الكبار الذين يبحثون عن استقرار طويل الأمد وتخطيط استثماري استراتيجي.",
+    "duration": "سنة واحدة",
+    "paymentFrequency": "شهريًا"
+  }
+  },
+  "footer": {
+    "companyDescription": "ابدأ رحلتك في الاستثمار والتداول مع مجموعة شركات Honest EG",
+    "social": {
+      "facebook": "فيسبوك",
+      "website": "الموقع الإلكتروني"
+    },
+    "aboutUs": {
+      "title": "من نحن",
+      "aboutCompany": "عن الشركة",
+      "packages": "الباقات",
+      "ourCompanies": "شركاتنا"
+    },
+    "location": {
+      "title": "الموقع",
+      "cairo": "المقطم، الهضبة الوسطى 99 بتقسيم الزهور - القاهرة",
+      "alexandria": "81 أ شارع سيدي جابر - الإسكندرية"
+    },
+    "contact": {
+      "title": "معلومات الاتصال"
+    },
+    "copyright": "© {{year}} Honest Egy. جميع الحقوق محفوظة."
+  }
+  
+}

@@ -187,7 +187,6 @@ export default function Companies() {
                 We equip individuals and organizations with the knowledge and practical skills in business, trading,
                 marketing, and technology — empowering them to achieve lasting success in a fast-changing world.
               </p>
-             
             </div>
           </div>
         </div>
