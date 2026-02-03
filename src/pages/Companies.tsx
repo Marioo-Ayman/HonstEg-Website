@@ -209,9 +209,7 @@ import {
   slideInRight,
   scrollFadeIn,
   logoHover,
-  imageReveal,
-  staggerContainer,
-  staggerItem,
+  imageReveal
 } from "@/utils/animations";
 
 export default function Companies() {
