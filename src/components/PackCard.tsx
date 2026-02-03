@@ -63,7 +63,7 @@ export function InvestmentCard({
       </div>
 
       {/* Description */}
-      <p className={`mb-8 leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+      <p className={`mb-8 leading-relaxed w-85 ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
         {description}
       </p>
 

@@ -12,12 +12,33 @@ import { motion, AnimatePresence, useInView } from "motion/react";
 import { Pagination } from "@/components/Pagination";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-
+import {
+  textReveal,
+  textLine
+} from "@/utils/animations";
 export default function Home() {
   const { t } = useTranslation();
   
   const investmentPackages = [
+    {packageId: "8",
+      packageName: t('packages.starter.name'),
+      returnPercentage: "3%",
+      description: t('packages.starter.description'),
+      minimumInvestment: "$1000",
+      duration: t('packages.starter.duration'),
+      riskLevel: t('packages.starter.paymentFrequency'),
+      variant: "dark" as const,
+    },
     {
+      packageId: "9",
+      packageName: t('packages.growth.name'),
+      returnPercentage: "4%",
+      description: t('packages.growth.description'),
+      minimumInvestment: "$4000",
+      duration: t('packages.growth.duration'),
+      riskLevel: t('packages.growth.paymentFrequency'),
+      variant: "dark" as const,
+    },{
       packageId: "1",
       packageName: t('packages.premium.name'),
       returnPercentage: "5%",
@@ -86,32 +107,13 @@ export default function Home() {
       duration: t('packages.supreme.duration'),
       riskLevel: t('packages.supreme.paymentFrequency'),
       variant: "dark" as const,
-    },   {
-      packageId: "8",
-      packageName: t('packages.starter.name'),
-      returnPercentage: "3%",
-      description: t('packages.starter.description'),
-      minimumInvestment: "$1000",
-      duration: t('packages.starter.duration'),
-      riskLevel: t('packages.starter.paymentFrequency'),
-      variant: "dark" as const,
-    },
-    {
-      packageId: "9",
-      packageName: t('packages.growth.name'),
-      returnPercentage: "4%",
-      description: t('packages.growth.description'),
-      minimumInvestment: "$4000",
-      duration: t('packages.growth.duration'),
-      riskLevel: t('packages.growth.paymentFrequency'),
-      variant: "dark" as const,
-    },
+    },   
     {
     packageId: "10",
     packageName: t('packages.silver.name'),
     returnPercentage: "4%",
     description: t('packages.silver.description'),
-    minimumInvestment: "4,000 EGP",
+    minimumInvestment: "15,000 EGP",
     duration: t('packages.silver.duration'),
     riskLevel: t('packages.silver.paymentFrequency'),
     variant: "dark" as const,
@@ -121,7 +123,7 @@ export default function Home() {
     packageName: t('packages.gold.name'),
     returnPercentage: "5%",
     description: t('packages.gold.description'),
-    minimumInvestment: "7,000 EGP",
+    minimumInvestment: "60,000 EGP",
     duration: t('packages.gold.duration'),
     riskLevel: t('packages.gold.paymentFrequency'),
     variant: "dark" as const,
@@ -131,61 +133,32 @@ export default function Home() {
     packageName: t('packages.platinum.name'),
     returnPercentage: "6%",
     description: t('packages.platinum.description'),
-    minimumInvestment: "11,000 EGP",
+    minimumInvestment: "160,000 EGP",
     duration: t('packages.platinum.duration'),
     riskLevel: t('packages.platinum.paymentFrequency'),
     variant: "dark" as const,
   },
   {
     packageId: "13",
-    packageName: t('packages.flexi.name'),
-    returnPercentage: "7%",
-    description: t('packages.flexi.description'),
-    minimumInvestment: "15,000 EGP",
-    duration: t('packages.flexi.duration'),
-    riskLevel: t('packages.flexi.paymentFrequency'),
+    packageName: t('packages.diamond.name'),
+    returnPercentage: "8%",
+    description: t('packages.diamond.description'),
+    minimumInvestment: "310,000 EGP",
+    duration: t('packages.diamond.duration'),
+    riskLevel: t('packages.diamond.paymentFrequency'),
     variant: "dark" as const,
   },
   {
     packageId: "14",
-    packageName: t('packages.visionary.name'),
-    returnPercentage: "9%",
-    description: t('packages.visionary.description'),
-    minimumInvestment: "21,000 EGP",
-    duration: t('packages.visionary.duration'),
-    riskLevel: t('packages.visionary.paymentFrequency'),
-    variant: "dark" as const,
-  },
-  {
-    packageId: "15",
-    packageName: t('packages.legendary.name'),
+    packageName: t('packages.honestEgy.name'),
     returnPercentage: "10%",
-    description: t('packages.legendary.description'),
-    minimumInvestment: "31,000 EGP",
-    duration: t('packages.legendary.duration'),
-    riskLevel: t('packages.legendary.paymentFrequency'),
+    description: t('packages.honestEgy.description'),
+    minimumInvestment: "620,000 EGP",
+    duration: t('packages.honestEgy.duration'),
+    riskLevel: t('packages.honestEgy.paymentFrequency'),
     variant: "dark" as const,
   },
-  {
-    packageId: "16",
-    packageName: t('packages.infinity.name'),
-    returnPercentage: "12%",
-    description: t('packages.infinity.description'),
-    minimumInvestment: "110,000 EGP",
-    duration: t('packages.infinity.duration'),
-    riskLevel: t('packages.infinity.paymentFrequency'),
-    variant: "dark" as const,
-  },
-  {
-    packageId: "17",
-    packageName: t('packages.supreme.name'),
-    returnPercentage: "13%",
-    description: t('packages.supreme.description'),
-    minimumInvestment: "200,000 EGP",
-    duration: t('packages.supreme.duration'),
-    riskLevel: t('packages.supreme.paymentFrequency'),
-    variant: "dark" as const,
-  }
+
   ];
 
   const ref = useRef<HTMLDivElement>(null);
@@ -229,29 +202,43 @@ export default function Home() {
   return (
     <main className="">
       {/* Hero Section */}
-      <div
-        ref={homeRef}
-        id="home"
-        className="min-h-screen flex items-center justify-center mb-15 overflow-hidden relative"
-      >
-        <img
-          src={Bg1}
-          alt="Background"
-          className="absolute top-0 left-0 w-full h-full object-cover -z-10 blur-xs transform scale-x-105"
-        />
-        <div className="absolute inset-0 bg-stone-950 opacity-60"></div>
-        <div className="relative text-center text-white px-4">
-          <p className="text-5xl md:text-9xl font-thin text-white mb-8">
-            {t('home.hero.takeYour')}
-          </p>
-          <p className="text-5xl md:text-9xl font-medium text-[#FFB300] mb-8">
-            {t('home.hero.investStrategy')}
-          </p>
-          <p className="text-5xl md:text-9xl font-medium text-white mb-8">
-            {t('home.hero.nextLevel')}
-          </p>
+     <div ref={homeRef} className="min-h-screen flex items-center justify-center overflow-hidden relative">
+          <motion.img
+            src={Bg1}
+            alt="Background"
+            className="absolute top-0 left-0 w-full h-full object-cover -z-10 blur-xs transform scale-x-105"
+            initial={{ scale: 1.2, opacity: 0 }}
+            animate={{ scale: 1.05, opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+          />
+          <div className="absolute inset-0 bg-stone-950 opacity-60"></div>
+          
+          <motion.div
+            className="relative text-center text-white px-4"
+            variants={textReveal}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.p
+              variants={textLine}
+              className="text-5xl md:text-9xl font-thin text-white mb-8"
+            >
+              {t("home.hero.takeYour")}
+            </motion.p>
+            <motion.p
+              variants={textLine}
+              className="text-5xl md:text-9xl font-medium text-[#FFB300] mb-8"
+            >
+              {t("home.hero.investStrategy")}
+            </motion.p>
+            <motion.p
+              variants={textLine}
+              className="text-5xl md:text-9xl font-medium text-white mb-8"
+            >
+              {t("home.hero.nextLevel")}
+            </motion.p>
+          </motion.div>
         </div>
-      </div>
 
       {/* About Section */}
       <div

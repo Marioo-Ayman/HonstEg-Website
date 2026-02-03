@@ -165,5 +165,86 @@
       "title": "Contact Info"
     },
     "copyright": "© {{year}} Honest Egy. All rights reserved."
+  },"about": {
+    "hero": {
+      "takeYour": "Take Your",
+      "investStrategy": "Invest Strategy",
+      "toNextLevel": "TO THE NEXT LEVEL"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be a leading company in the field of investment and development in Egypt by providing innovative and comprehensive solutions across the sectors of industry, agriculture, real estate, and stock markets. We aim to build an integrated economic ecosystem that supports entrepreneurs and investors, with a strong focus on education and training as essential tools for achieving success and financial sustainability"
+    },
+    "sectors": {
+      "title": "Sectors",
+      "items": {
+        "realEstate": {
+          "title": "Real Estate Investment",
+          "description": "Developing, selling, and leasing residential and commercial properties, while providing reliable solutions that enhance asset value and support the needs of the real estate market."
+        },
+        "training": {
+          "title": "Training & Qualification",
+          "description": "Empowering individuals and organizations with comprehensive training programs in business management, leadership, and professional development to drive growth and excellence."
+        },
+        "stockExchange": {
+          "title": "The Egyptian Stock Exchange",
+          "description": "Providing expert guidance and strategic insights for navigating the Egyptian Stock Exchange, helping investors make informed decisions and maximize returns."
+        },
+        "landReclamation": {
+          "title": "Land Reclamation",
+          "description": "Transforming barren land into productive agricultural assets through innovative reclamation projects, contributing to food security and sustainable development."
+        },
+        "securitiesTrading": {
+          "title": "Securities Trading",
+          "description": "Offering secure and efficient securities trading services with professional support, enabling investors to build diversified portfolios and achieve financial goals."
+        },
+        "goldInvestment": {
+          "title": "Gold Investment",
+          "description": "Facilitating safe and profitable gold investment opportunities, providing a hedge against inflation and a pathway to wealth preservation and growth."
+        }
+      },
+      "learnMore": "Learn More"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "We are committed to providing strong and sustainable investment opportunities in key sectors such as industry, agriculture, real estate, and financial markets. Through specialized training programs, we empower individuals and entrepreneurs with the skills and knowledge needed to seize opportunities and drive growth."
+    }
+  },
+  "companies": {
+    "hero": {
+      "title": "Our Companies",
+      "subtitle": "Our Group of Companies and Their Investment Sectors"
+    },
+    "intro": {
+      "title": "A number of companies operating across various sectors",
+      "description": "Honest Egy Group consists of three companies operating in different sectors: Honest Homes, specialized in real estate investment; Finance Broker, also in the real estate field; and HR Academy, focused on training and professional development."
+    },
+    "section": {
+      "title": "Know more about Our Companies"
+    },
+    "hfb": {
+      "name": "Honest Financial Brokerage",
+      "description1": "At Honest Financial Brokerage, we are committed to providing a secure, efficient, and reliable trading environment that meets the evolving needs of our clients — driven by our dedication to innovation and transparency.",
+      "description2": "We have established ourselves as the preferred choice for securities trading in the United Arab Emirates, offering our investors financial solutions focused on growth and sustainability.",
+      "summaryTitle": "Summary:",
+      "summary": "This message highlights Honest Financial Brokerage's commitment to delivering a trusted and safe trading environment. It emphasizes the company's innovation and transparency in service delivery, positioning it as a leading choice for securities trading in the UAE. The statement also underlines the company's focus on offering financial solutions that foster sustainable growth for its investors"
+    },
+    "hh": {
+      "name": "HONEST HOMES",
+      "description": "Honest Homes Egypt is a real estate company focused on providing reliable and transparent property solutions. The company emphasizes integrity, professionalism, and customer satisfaction in helping clients buy, sell, or lease properties across Egypt.",
+      "mission": "Mission:",
+      "missionText": "To deliver honest and trustworthy real estate services with a customer-first approach.",
+      "values": "Values:",
+      "valuesText": "Integrity, transparency, and professionalism.",
+      "services": "Services:",
+      "servicesText": "Property sales, rentals, and investment opportunities in Egypt.",
+      "team": "Team:",
+      "teamText": "A group of experienced professionals dedicated to guiding clients throughout the real estate investment process.",
+      "closing": "The company aims to stand out in the market by prioritizing ethical business practices and building long-term relationships with its clients"
+    },
+    "hr": {
+      "name": "HR ACADEMY",
+      "description": "We equip individuals and organizations with the knowledge and practical skills in business, trading, marketing, and technology — empowering them to achieve lasting success in a fast-changing world."
+    }
   }
 }
