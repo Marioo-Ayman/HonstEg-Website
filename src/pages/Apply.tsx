@@ -18,6 +18,7 @@ export default function Apply() {
     email: "",
     phone: "",
     civilID: "",
+    link:"",
     packages: [
       {
         packageId: "gold",
@@ -44,7 +45,7 @@ export default function Apply() {
         }}
       >
         {({ values, handleChange, handleBlur, errors, touched, isSubmitting }) => (
-          <Form className='md:w-3/5 flex-col border-0 gap-3 shadow-2xl rounded-3xl flex p-10 bg-white mt-30 mb-20'>
+          <Form className='md:w-3/5 w-screen  flex-col border-0 gap-3 shadow-2xl rounded-3xl flex p-10 bg-white mt-30 mb-20'>
             {/* Image Upload Section */}
             <div >
               <div className='p-1'>
@@ -139,7 +140,7 @@ export default function Apply() {
             <div>
               <FieldArray name="packages">
                 {({ }) => (
-                  <>
+                  <div className="w-screen">
                     <h1 className='p-1 bg-gradient-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>
                       {t("apply.packages.title")}
                     </h1>
@@ -164,13 +165,13 @@ export default function Apply() {
                             },
                           }}
                         />
-                        <div className="mt-5">
-                          <p>Drop Your link Here</p>
-                          <TextField id="outlined-basic" label="Link" variant="outlined" />
-                        </div>
                       </div>
                     ))}
-                  </>
+                        <div className="mt-5 w-300">
+                          <p className="mb-2">{t("apply.userInfo.Link")} </p>
+                          <TextField name="link" id="outlined-Link" label={t("apply.userInfo.Link2")} value={values.link || ""} onChange={handleChange} onBlur={handleBlur} variant="outlined" />
+                        </div>
+                  </div>
                 )}
               </FieldArray>
             </div>

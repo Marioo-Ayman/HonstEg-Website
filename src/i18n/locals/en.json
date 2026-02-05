@@ -142,6 +142,13 @@
     "description": "An exclusive elite investment package offering maximum potential returns, designed for high-value investors who demand strategic forecasting, stability, and long-term growth.",
     "duration": "1 Year",
     "paymentFrequency": "Monthly"
+  },
+
+  "honestEgyplus": {
+    "name": "honest Egy plus",
+    "description": "An exclusive elite investment package offering maximum potential returns, designed for high-value investors who demand strategic forecasting, stability, and long-term growth.",
+    "duration": "1 Year",
+    "paymentFrequency": "Monthly"
   }
   },
   "footer": {
@@ -212,7 +219,7 @@
   "companies": {
     "hero": {
       "title": "Our Companies",
-      "subtitle": "Our Group of Companies and Their Investment Sectors"
+      "subtitle": "A Smart Investment For A Stronger Future"
     },
     "intro": {
       "title": "A number of companies operating across various sectors",
@@ -261,6 +268,8 @@
       "lastName": "Last Name",
       "phone": "Phone Number",
       "email": "Email Address",
+      "Link": "Drop Sales Code / Link Here",
+      "Link2": "Link",
       "nationalId": "National ID"
     },
     "packages": {
@@ -269,6 +278,7 @@
       "investmentAmount": "Investment Amount",
       "currency": "$USD"
     },
+
     "buttons": {
       "submit": "Submit",
       "investMore": "Invest More"

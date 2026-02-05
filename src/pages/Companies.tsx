@@ -32,8 +32,8 @@
 //                 <h2 className="text-xl md:w-1/2 md:text-[30px] font-semibold">A number of companies operating across various sectors</h2>
 //                 <p className=" text-md  text-gray-700  ">
 //                     Honest Egy Group consists of three companies operating in different sectors:
-//                     Honest Homes, specialized in real estate investment; 
-//                     Finance Broker, also in the real estate field; and HR Academy, 
+//                     Honest Homes, specialized in real estate investment;
+//                     Finance Broker, also in the real estate field; and HR Academy,
 //                     focused on training and professional development.
 //                 </p>
 //              </div>
@@ -42,7 +42,7 @@
 //             </div>
 //         </div>
 //     </section>
-//     <section className="w-full py-16 px-4 bg-linear-to-b from-slate-50/20 to-white relative ">     
+//     <section className="w-full py-16 px-4 bg-linear-to-b from-slate-50/20 to-white relative ">
 //       <div className="max-w-6xl mx-auto space-y-10 ">
 //         <img src={Bg4} alt="" className="absolute top-0 left-0 w-full h-full -z-1 opacity-3 " />
 //         {/* Section Title */}
@@ -203,13 +203,15 @@ import HFB from "@/assets/HFB.png";
 import Bg4 from "@/assets/bg4.jpg";
 import Trading from "@/assets/OptionsTrading.jpg";
 import BM from "@/assets/business-man.jpg";
+import { Link } from "react-router-dom";
+
 import {
   fadeInUp,
   slideInLeft,
   slideInRight,
   scrollFadeIn,
   logoHover,
-  imageReveal
+  imageReveal,
 } from "@/utils/animations";
 
 export default function Companies() {
@@ -230,7 +232,7 @@ export default function Companies() {
             transition={{ duration: 1.5 }}
           />
           <div className="absolute inset-0 bg-stone-950 opacity-60"></div>
-          
+
           <motion.div
             className={`relative text-start text-white px-4 md:-top-20 ${
               isRTL ? "md:-right-20" : "md:-left-20"
@@ -275,10 +277,7 @@ export default function Companies() {
             >
               {t("companies.intro.title")}
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg text-gray-700"
-            >
+            <motion.p variants={fadeInUp} className="text-lg text-gray-700">
               {t("companies.intro.description")}
             </motion.p>
           </motion.div>
@@ -331,7 +330,9 @@ export default function Companies() {
             viewport={{ once: true, amount: 0.2 }}
             variants={scrollFadeIn}
           >
-            <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-9 ${isRTL ? "md:flex-row-reverse" : ""}`}>
+            <div
+              className={`flex flex-col md:flex-row items-center gap-8 md:gap-9 ${isRTL ? "md:flex-row-reverse" : ""}`}
+            >
               {/* Logo Section */}
               <motion.div
                 className="shrink-0 w-full md:w-1/3 flex justify-center"
@@ -343,11 +344,13 @@ export default function Companies() {
                   whileHover="hover"
                   variants={logoHover}
                 >
-                  <img
-                    src={HFB}
-                    alt="Honest Financial Brokerage Logo"
-                    className="max-w-full max-h-full p-4 object-contain scale-150"
-                  />
+                  <Link to="/Honest-Financial-Brokerage">
+                    <img
+                      src={HFB}
+                      alt="Honest Financial Brokerage Logo"
+                      className="max-w-full max-h-full p-4 object-contain scale-150"
+                    />
+                  </Link>
                 </motion.div>
               </motion.div>
 
@@ -365,7 +368,9 @@ export default function Companies() {
                 <p className="text-gray-600 text-md leading-relaxed mb-6">
                   {t("companies.hfb.description2")}
                 </p>
-                <h3 className="font-semibold mb-2">{t("companies.hfb.summaryTitle")}</h3>
+                <h3 className="font-semibold mb-2">
+                  {t("companies.hfb.summaryTitle")}
+                </h3>
                 <p className="text-gray-600 text-md leading-relaxed mb-6">
                   {t("companies.hfb.summary")}
                 </p>
@@ -381,8 +386,10 @@ export default function Companies() {
             viewport={{ once: true, amount: 0.2 }}
             variants={scrollFadeIn}
           >
-            <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-0 ${isRTL ? "" : "md:flex-row-reverse"}`}>
-                              {/* Logo Section */}
+            <div
+              className={`flex flex-col md:flex-row items-center gap-8 md:gap-0 ${isRTL ? "" : "md:flex-row-reverse"}`}
+            >
+              {/* Logo Section */}
               <motion.div
                 className="shrink-0 w-full md:w-1/3 flex justify-center"
                 variants={fadeInUp}
@@ -393,11 +400,13 @@ export default function Companies() {
                   whileHover="hover"
                   variants={logoHover}
                 >
-                  <img
-                    src={HH}
-                    alt="HONEST HOMES Logo"
-                    className="max-w-full max-h-full p-4 object-contain scale-250"
-                  />
+                  <Link to="/Honest-Home">
+                    <img
+                      src={HH}
+                      alt="HONEST HOMES Logo"
+                      className="max-w-full max-h-full p-4 object-contain scale-250"
+                    />
+                  </Link>
                 </motion.div>
               </motion.div>
               {/* Content Section */}
@@ -414,37 +423,53 @@ export default function Companies() {
 
                 {/* Bullet Points */}
                 <ul className="space-y-3 ml-2">
-                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}>
+                  <li
+                    className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}
+                  >
                     <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
                     <div className={isRTL ? "" : ""}>
-                      <span className="font-semibold">{t("companies.hh.mission")} </span>
+                      <span className="font-semibold">
+                        {t("companies.hh.mission")}{" "}
+                      </span>
                       <span className="text-gray-600 text-md leading-relaxed">
                         {t("companies.hh.missionText")}
                       </span>
                     </div>
                   </li>
-                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}>
+                  <li
+                    className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}
+                  >
                     <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
                     <div className={isRTL ? "text-right" : ""}>
-                      <span className="font-semibold">{t("companies.hh.values")} </span>
+                      <span className="font-semibold">
+                        {t("companies.hh.values")}{" "}
+                      </span>
                       <span className="text-gray-600 text-md leading-relaxed">
                         {t("companies.hh.valuesText")}
                       </span>
                     </div>
                   </li>
-                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}>
+                  <li
+                    className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}
+                  >
                     <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
                     <div className={isRTL ? "text-right" : ""}>
-                      <span className="font-semibold">{t("companies.hh.services")} </span>
+                      <span className="font-semibold">
+                        {t("companies.hh.services")}{" "}
+                      </span>
                       <span className="text-gray-600 text-md leading-relaxed">
                         {t("companies.hh.servicesText")}
                       </span>
                     </div>
                   </li>
-                  <li className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}>
+                  <li
+                    className={`flex items-start gap-3 text-gray-700 ${isRTL ? "" : ""}`}
+                  >
                     <span className="shrink-0 w-2 h-2 rounded-full bg-gray-700 mt-2" />
                     <div className={isRTL ? "text-right" : ""}>
-                      <span className="font-semibold">{t("companies.hh.team")} </span>
+                      <span className="font-semibold">
+                        {t("companies.hh.team")}{" "}
+                      </span>
                       <span className="text-gray-600 text-md leading-relaxed">
                         {t("companies.hh.teamText")}
                       </span>
@@ -455,8 +480,6 @@ export default function Companies() {
                   {t("companies.hh.closing")}
                 </p>
               </motion.div>
-
-              
             </div>
           </motion.div>
 
@@ -468,7 +491,9 @@ export default function Companies() {
             viewport={{ once: true, amount: 0.2 }}
             variants={scrollFadeIn}
           >
-            <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-9 ${isRTL ? "md:flex-row-reverse" : ""}`}>
+            <div
+              className={`flex flex-col md:flex-row items-center gap-8 md:gap-9 ${isRTL ? "md:flex-row-reverse" : ""}`}
+            >
               {/* Logo Section */}
               <motion.div
                 className="shrink-0 w-full md:w-1/3 flex justify-center"
@@ -480,11 +505,13 @@ export default function Companies() {
                   whileHover="hover"
                   variants={logoHover}
                 >
-                  <img
-                    src={HR}
-                    alt="HR ACADEMY Logo"
-                    className="max-w-full max-h-full p-4 object-contain scale-200"
-                  />
+                  <Link to="/HR-Academy">
+                    <img
+                      src={HR}
+                      alt="HR ACADEMY Logo"
+                      className="max-w-full max-h-full p-4 object-contain scale-200"
+                    />
+                  </Link>
                 </motion.div>
               </motion.div>
 

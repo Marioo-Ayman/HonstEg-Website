@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Home from "@/pages/Home";
 import Footer from "@/components/Footer";
+import {LandingPage} from "@/pages/CompanyDetails";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
@@ -9,13 +10,18 @@ import { CacheProvider } from "@emotion/react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { createEmotionCache } from "@/emotionCache";
+import HHC from "@/components/Companies/HHC";
+import HRC from "@/components/Companies/HRC";
+import HFBC from "@/components/Companies/HFBC";
+import {egpPackages, getUsdPackages} from "@/constance/packs"
 function App() {
   const Apply = lazy(() => import("./pages/Apply"));
   const Companies = lazy(() => import("./pages/Companies"));
   const About = lazy(() => import("./pages/About"));
-  const { i18n } = useTranslation();
+  const { t,i18n } = useTranslation();
   const direction = i18n.language === "ar" ? "rtl" : "ltr";
-
+ const HRpackages = egpPackages(t);
+ const HFpackages = getUsdPackages(t);
   const theme = createTheme({ direction });
   const cache = createEmotionCache(direction);
 
@@ -43,6 +49,21 @@ function App() {
               <Route path="/invest" element={<Apply />} />
               <Route path="/our-companies" element={<Companies />} />
               <Route path="/About-Us" element={<About />} />
+              <Route path="/Honest-Financial-Brokerage" element={  
+                                                  <LandingPage
+                                                    content={<HFBC />}
+                                                    customPackages={HFpackages} 
+                                                   />} />
+              <Route path="/HR-Academy" element={  
+                                                  <LandingPage
+                                                    content={<HRC />}
+                                                    customPackages={HRpackages} 
+                                                  />} />
+              <Route path="/Honest-Homes" element={  
+                                                  <LandingPage
+                                                    content= {<HHC />}
+                                                    customPackages={HFpackages} 
+                                                  />} />
             </Routes>
             <Footer />
           </Suspense>

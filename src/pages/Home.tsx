@@ -16,159 +16,15 @@ import {
   textReveal,
   textLine
 } from "@/utils/animations";
+
+
 export default function Home() {
   const { t } = useTranslation();
   
-  const investmentPackages = [
-    {packageId: "8",
-      packageName: t('packages.starter.name'),
-      returnPercentage: "3%",
-      description: t('packages.starter.description'),
-      minimumInvestment: "$1000",
-      duration: t('packages.starter.duration'),
-      riskLevel: t('packages.starter.paymentFrequency'),
-      variant: "dark" as const,
-    },
-    {
-      packageId: "9",
-      packageName: t('packages.growth.name'),
-      returnPercentage: "4%",
-      description: t('packages.growth.description'),
-      minimumInvestment: "$4000",
-      duration: t('packages.growth.duration'),
-      riskLevel: t('packages.growth.paymentFrequency'),
-      variant: "dark" as const,
-    },{
-      packageId: "1",
-      packageName: t('packages.premium.name'),
-      returnPercentage: "5%",
-      description: t('packages.premium.description'),
-      minimumInvestment: "$7000",
-      duration: t('packages.premium.duration'),
-      riskLevel: t('packages.premium.paymentFrequency'),
-      variant: "dark" as const,
-    },
-    {
-      packageId: "2",
-      packageName: t('packages.elite.name'),
-      returnPercentage: "6%",
-      description: t('packages.elite.description'),
-      minimumInvestment: "$11,000",
-      duration: t('packages.elite.duration'),
-      riskLevel: t('packages.elite.paymentFrequency'),
-      variant: "dark" as const,
-    },
-    {
-      packageId: "3",
-      packageName: t('packages.flexi.name'),
-      returnPercentage: "7%",
-      description: t('packages.flexi.description'),
-      minimumInvestment: "$15,000",
-      duration: t('packages.flexi.duration'),
-      riskLevel: t('packages.flexi.paymentFrequency'),
-      variant: "dark" as const,
-    },
-    {
-      packageId: "4",
-      packageName: t('packages.visionary.name'),
-      returnPercentage: "9%",
-      description: t('packages.visionary.description'),
-      minimumInvestment: "$21,000",
-      duration: t('packages.visionary.duration'),
-      riskLevel: t('packages.visionary.paymentFrequency'),
-      variant: "dark" as const,
-    },
-    {
-      packageId: "5",
-      packageName: t('packages.legendary.name'),
-      returnPercentage: "10%",
-      description: t('packages.legendary.description'),
-      minimumInvestment: "$31,000",
-      duration: t('packages.legendary.duration'),
-      riskLevel: t('packages.legendary.paymentFrequency'),
-      variant: "dark" as const,
-    },
-    {
-      packageId: "6",
-      packageName: t('packages.infinity.name'),
-      returnPercentage: "12%",
-      description: t('packages.infinity.description'),
-      minimumInvestment: "$110,000",
-      duration: t('packages.infinity.duration'),
-      riskLevel: t('packages.infinity.paymentFrequency'),
-      variant: "dark" as const,
-    },
-    {
-      packageId: "7",
-      packageName: t('packages.supreme.name'),
-      returnPercentage: "13%",
-      description: t('packages.supreme.description'),
-      minimumInvestment: "$200,000",
-      duration: t('packages.supreme.duration'),
-      riskLevel: t('packages.supreme.paymentFrequency'),
-      variant: "dark" as const,
-    },   
-    {
-    packageId: "10",
-    packageName: t('packages.silver.name'),
-    returnPercentage: "4%",
-    description: t('packages.silver.description'),
-    minimumInvestment: "15,000 EGP",
-    duration: t('packages.silver.duration'),
-    riskLevel: t('packages.silver.paymentFrequency'),
-    variant: "dark" as const,
-  },
-  {
-    packageId: "11",
-    packageName: t('packages.gold.name'),
-    returnPercentage: "5%",
-    description: t('packages.gold.description'),
-    minimumInvestment: "60,000 EGP",
-    duration: t('packages.gold.duration'),
-    riskLevel: t('packages.gold.paymentFrequency'),
-    variant: "dark" as const,
-  },
-  {
-    packageId: "12",
-    packageName: t('packages.platinum.name'),
-    returnPercentage: "6%",
-    description: t('packages.platinum.description'),
-    minimumInvestment: "160,000 EGP",
-    duration: t('packages.platinum.duration'),
-    riskLevel: t('packages.platinum.paymentFrequency'),
-    variant: "dark" as const,
-  },
-  {
-    packageId: "13",
-    packageName: t('packages.diamond.name'),
-    returnPercentage: "8%",
-    description: t('packages.diamond.description'),
-    minimumInvestment: "310,000 EGP",
-    duration: t('packages.diamond.duration'),
-    riskLevel: t('packages.diamond.paymentFrequency'),
-    variant: "dark" as const,
-  },
-  {
-    packageId: "14",
-    packageName: t('packages.honestEgy.name'),
-    returnPercentage: "10%",
-    description: t('packages.honestEgy.description'),
-    minimumInvestment: "620,000 EGP",
-    duration: t('packages.honestEgy.duration'),
-    riskLevel: t('packages.honestEgy.paymentFrequency'),
-    variant: "dark" as const,
-  },
-
-  ];
+  
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
-  const totalPages = Math.ceil(investmentPackages.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentPackages = investmentPackages.slice(startIndex, endIndex);
   const location = useLocation();
 
   // Create refs for multiple sections
@@ -195,18 +51,14 @@ export default function Home() {
     }
   }, [location]);
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
-
   return (
-    <main className="">
+    <main className="w-full overflow-x-hidden">
       {/* Hero Section */}
-     <div ref={homeRef} className="min-h-screen flex items-center justify-center overflow-hidden relative">
+     <div ref={homeRef} className="min-h-screen flex items-center justify-center overflow-hidden relative ">
           <motion.img
             src={Bg1}
             alt="Background"
-            className="absolute top-0 left-0 w-full h-full object-cover -z-10 blur-xs transform scale-x-105"
+            className="absolute top-0 left-0 w-full h-full object-cover -z-10 blur-xs transform scale-x-100 md:scale-x-105"
             initial={{ scale: 1.2, opacity: 0 }}
             animate={{ scale: 1.05, opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
@@ -238,16 +90,17 @@ export default function Home() {
               {t("home.hero.nextLevel")}
             </motion.p>
           </motion.div>
+          
         </div>
 
       {/* About Section */}
       <div
         ref={aboutRef}
         id="about"
-        className="flex flex-col scroll-mt-24 justify-center items-center space-y-2.5"
+        className="flex flex-col scroll-mt-24 justify-center items-center space-y-2.5 mt-10"
       >
         <div className="flex flex-col md:flex-row border-0 rounded-xl shadow-2xl w-3/4 pt-10 pb-10 justify-center items-center">
-          <div className="p-3 md:p-15 w-3/4 flex flex-col justify-center">
+          <div className="p-5 md:p-15 md:w-3/4 flex flex-col justify-center">
             <h2 className="text-xl md:text-[30px] font">
               {t('home.about.welcome')}
             </h2>
@@ -256,7 +109,7 @@ export default function Home() {
               {t('home.about.title')}
             </h1>
             <br />
-            <p className="text-[12px] md:text-2xl text-gray-700 mb-8">
+            <p className="text-[17px] md:text-2xl text-gray-700 ">
               {t('home.about.description')}
             </p>
           </div>
@@ -264,42 +117,11 @@ export default function Home() {
             <img
               src={About}
               alt="algorithm trading pic"
-              className="scale-70 rounded-2xl drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] md:scale-90"
+              className="scale-90 rounded-2xl drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] md:scale-90"
             />
           </div>
         </div>
-
-        {/* Companies Section */}
-        <div className="flex flex-col md:flex-row gap-2 justify-around items-center w-3/4 mb-12">
-          <Link to="/our-companies">
-            <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
-              <img
-                src={HH}
-                alt="Honest Homes"
-                className="object-cover scale-70 h-35"
-              />
-              <p>{t('home.companies.honestHouse')}</p>
-            </div>
-          </Link>
-          <Link to="/our-companies">
-            <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
-              <img src={HFB} alt="HFB" className="object-cover w-35 h-35" />
-              <p>{t('home.companies.honestHouse')}</p>
-            </div>
-          </Link>
-          <Link to="/our-companies">
-            <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
-              <img
-                src={HR}
-                alt="Honest Of Revenue"
-                className="object-cover w-35 h-35"
-              />
-              <p>{t('home.companies.honestHouse')}</p>
-            </div>
-          </Link>
-        </div>
-
-        {/* Statistics Section */}
+        
         <section
           ref={ref}
           className="flex flex-row justify-around w-full bg-gradient-to-br from-slate-950 to-sky-500 p-5 md:p-10 md:mb-15 mb-5"
@@ -329,10 +151,43 @@ export default function Home() {
             </p>
           </div>
         </section>
+
+        {/* Companies Section */}
+        <div className="flex flex-col md:flex-row gap-2 justify-around items-center w-3/4 mb-12">
+          <Link to="/our-companies">
+            <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+              <img
+                src={HH}
+                alt="Honest Homes"
+                className="object-cover scale-70 h-35"
+              />
+              <p>{t('home.companies.honestHouse')}</p>
+            </div>
+          </Link>
+          <Link to="/our-companies">
+            <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+              <img src={HFB} alt="HFB" className="object-cover w-35 h-35" />
+              <p>{t("companies.hfb.name")}</p>
+            </div>
+          </Link>
+          <Link to="/our-companies">
+            <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+              <img
+                src={HR}
+                alt="Honest Of Revenue"
+                className="object-cover w-35 h-35"
+              />
+              <p>{t("companies.hr.name")}</p>
+            </div>
+          </Link>
+        </div>
+
+        {/* Statistics Section */}
+    
       </div>
 
       {/* Investment Packages Section */}
-      <div
+      {/* <div
         ref={packsRef}
         id="packs"
         className="flex flex-col scroll-mt-24 justify-center items-center mb-12 relative p-4"
@@ -357,11 +212,11 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="max-w-7xl mx-auto mb-8 text-center"
-        ></motion.div>
+          className="max-w-6xl mx-auto mb-8 text-center"
+        ></motion.div> */}
 
         {/* Cards Grid with AnimatePresence for smooth transitions */}
-        <div className="max-w-7xl mx-auto">
+        {/* <div className="max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentPage}
@@ -391,14 +246,13 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Pagination */}
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={handlePageChange}
           />
-        </div>
-      </div>
+        </div>*/}
+      {/* </div>  */}
 
       {/* Contact Section */}
       <div
@@ -411,3 +265,11 @@ export default function Home() {
     </main>
   );
 }
+    //  <LandingPage
+    //     heroTitle="Invest in Your Future"
+    //     heroSubtitle="Discover investment opportunities across real estate, finance, and professional development"
+    //     heroImageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop"
+    //     aboutContent="We are a leading investment company providing innovative solutions across multiple sectors. Our integrated approach combines real estate expertise, financial advisory services, and professional training to create comprehensive opportunities for investors and entrepreneurs looking to build sustainable wealth."
+    //     packs={packages}
+    //     ctaButtonText="Explore Packages"
+    //   />
