@@ -3,13 +3,10 @@ import HH from "@/assets/HH.png";
 import HR from "@/assets/HR.png";
 import HFB from "@/assets/HFB.png";
 import About from "@/assets/Algorithmic_20Trading.jpeg";
-import invest from "@/assets/investment-bg.jpg";
 import Counter from "@/components/Counter";
-import { InvestmentCard } from "@/components/PackCard";
 import ContactUs from "@/components/ContactUs";
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useInView } from "motion/react";
-import { Pagination } from "@/components/Pagination";
+import { useRef, useEffect } from "react";
+import { motion, useInView } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import {
