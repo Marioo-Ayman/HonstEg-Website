@@ -155,7 +155,7 @@ interface Package {
       variant: "dark" as const,
     },
     {
-      packageId: "14",
+      packageId: "15",
       packageName: t('packages.honestEgyplus.name'),
       returnPercentage: "13%",
       description: t('packages.honestEgyplus.description'),
@@ -166,6 +166,36 @@ interface Package {
     },
   ];
 
+  export const getHHpacks = (t: TFunction): Package[] => [
+  {
+    packageId: "16",
+    packageName: "Primary",
+    returnPercentage: "10%",
+    description: t('packages.primaryHH.description'),
+    minimumInvestment: "750,000 EGP",
+    duration:t('packages.primaryHH.duration'),
+    riskLevel: t('packages.primaryHH.paymentFrequency'),
+    variant: "dark" as const,
+  },
+  {
+    packageId: "17",
+    packageName: "Plus ",
+    returnPercentage: "10%",
+    description: t('packages.plusHH.description'),
+    minimumInvestment: "1,000,000 EGP",
+    duration:t('packages.plusHH.duration'),
+    riskLevel: t('packages.plusHH.paymentFrequency'),
+  },
+  {
+    packageId: "18",
+    packageName: "Premium ",
+    returnPercentage: "10%",
+    description: t('packages.primaryHH.description'),
+    minimumInvestment: "2,000,000 EGP",
+    duration:t('packages.premiumHH.duration'),
+    riskLevel: t('packages.premiumHH.paymentFrequency'),
+  },
+];
 //   const investmentPackages = [
 //     {packageId: "8",
 //       packageName: t('packages.starter.name'),

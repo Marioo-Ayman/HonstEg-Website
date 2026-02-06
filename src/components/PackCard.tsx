@@ -2,7 +2,7 @@ import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 interface InvestmentCardProps {
@@ -24,9 +24,9 @@ export function InvestmentCard({
   riskLevel,
   variant = "light",
 }: InvestmentCardProps) {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const isDark = variant === "dark";
-
   return (
     <div
       className={`
@@ -157,7 +157,6 @@ export function InvestmentCard({
       </div>
 
       {/* Apply Now Button */}
-      <Link to="/invest">
         <button
           className={`
             w-full py-4 px-6 rounded-xl font-semibold text-white
@@ -170,11 +169,11 @@ export function InvestmentCard({
             shadow-md hover:shadow-xl hover:scale-[1.02]
             flex items-center justify-center gap-2
           `}
+           onClick={() => navigate(`/invest/${encodeURIComponent(packageName)}`)}
         >
           <span>{t("investment.applyNow")}</span>
           <TrendingUpIcon className="w-5 h-5" />
         </button>
-      </Link>
     </div>
   );
 }

@@ -2,16 +2,18 @@ import { useTranslation } from "react-i18next";
 import { Button, TextField, InputAdornment } from '@mui/material';
 import { Formik, Form, FieldArray } from "formik";
 import { applySchema } from "@/Schema";
-import type { ApplyFormValues } from "@/types/Types";
+import type { ApplyFormValues ,PackageForm } from "@/types/Types";
 import { submitToFormspree } from "@/submit";
 import { ImageUploadField } from '@/components/ImageUploadField';
 import ConfirmationCard from "@/components/ConfirmCard";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+import type { FormikErrors} from "formik";
 
 export default function Apply() {
   const { t,i18n } = useTranslation();
   // const isRTL = i18n.language === "ar";
-
+  const { pac } = useParams<{ pac: string }>();
   const initialValues: ApplyFormValues = {
     fName: "",
     lName: "",
@@ -21,9 +23,9 @@ export default function Apply() {
     link:"",
     packages: [
       {
-        packageId: "gold",
-        packageName: "Gold Package",
-        investmentAmount: 0,
+        packageId: pac ?? "",
+        packageName: pac ?? "",
+        investmentAmount: "" as any,
       },
     ],
   };
@@ -144,32 +146,68 @@ export default function Apply() {
                     <h1 className='p-1 bg-gradient-to-r from-blue-950 to-blue-500 text-transparent bg-clip-text inline-block text-3xl'>
                       {t("apply.packages.title")}
                     </h1>
-                    {values.packages.map((pkg, i) => (
-                      <div key={pkg.packageId} >
-                        <p className='m-2'>
-                          {t("apply.packages.packName")}: {pkg.packageName}
-                        </p>
-                        <TextField
-                          name={`packages.${i}.investmentAmount`}
-                          label={t("apply.packages.investmentAmount")}
-                          value={values.packages[i].investmentAmount || ""}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          slotProps={{
-                            input: {
-                              endAdornment: (
-                                <InputAdornment position="end">
-                                  {t("apply.packages.currency")}
-                                </InputAdornment>
-                              ),
-                            },
-                          }}
-                        />
-                      </div>
-                    ))}
-                        <div className="mt-5 w-300">
+                          {values.packages.map((pkg, i) => {
+                            // Get the error for this index
+                            const packageErrorItem = Array.isArray(errors.packages) ? errors.packages[i] : undefined;
+
+                            // Narrow: is it an object (field-level errors) or a string (array-item-level error)?
+                            const packageErrors =
+                              packageErrorItem && typeof packageErrorItem === 'object'
+                                ? (packageErrorItem as FormikErrors<PackageForm>) // or your actual shape
+                                : undefined;
+
+                            const packageTouched = Array.isArray(touched.packages)
+                              ? touched.packages[i]
+                              : undefined;
+
+                            // Optional: show array-item level error (if any)
+                            const arrayItemError =
+                              typeof packageErrorItem === 'string' ? packageErrorItem : undefined;
+
+                            return (
+                              <div key={pkg.packageId || i}>
+                                <p className="m-2">{pkg.packageName || 'Package'}</p> {/* fixed typo: pac → pkg */}
+
+                                {arrayItemError && (
+                                  <div className="text-red-600 text-sm mb-2">{arrayItemError}</div>
+                                )}
+
+                                <TextField
+                                  name={`packages.${i}.investmentAmount`}
+                                  label={t("apply.packages.investmentAmount")}
+                                  type="number"
+                                  value={values.packages[i].investmentAmount ?? ""} // safer than ||
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  error={Boolean(
+                                    packageTouched?.investmentAmount && packageErrors?.investmentAmount
+                                  )}
+                                  helperText={
+                                    packageTouched?.investmentAmount && packageErrors?.investmentAmount
+                                      ? String(packageErrors.investmentAmount) // make sure it's string
+                                      : undefined
+                                  }
+                                  InputProps={{
+                                    endAdornment: (
+                                      <InputAdornment position="end">
+                                        {t("apply.packages.currency")}
+                                      </InputAdornment>
+                                    ),
+                                  }}
+                                />
+                              </div>
+                            );
+                          })}
+                                                  <div className="mt-5 w-300">
                           <p className="mb-2">{t("apply.userInfo.Link")} </p>
-                          <TextField name="link" id="outlined-Link" label={t("apply.userInfo.Link2")} value={values.link || ""} onChange={handleChange} onBlur={handleBlur} variant="outlined" />
+                          <TextField name="link" id="outlined-Link"
+                           label={t("apply.userInfo.Link2")}
+                            value={values.link || ""} 
+                            onChange={handleChange} 
+                            onBlur={handleBlur} 
+                            error={touched.link && Boolean(errors.link)}
+                            helperText={touched.link && errors.link}
+                            variant="outlined" />
                         </div>
                   </div>
                 )}

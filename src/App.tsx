@@ -13,7 +13,7 @@ import { createEmotionCache } from "@/emotionCache";
 import HHC from "@/components/Companies/HHC";
 import HRC from "@/components/Companies/HRC";
 import HFBC from "@/components/Companies/HFBC";
-import {egpPackages, getUsdPackages} from "@/constance/packs"
+import {egpPackages, getUsdPackages,getHHpacks} from "@/constance/packs"
 function App() {
   const Apply = lazy(() => import("./pages/Apply"));
   const Companies = lazy(() => import("./pages/Companies"));
@@ -22,6 +22,8 @@ function App() {
   const direction = i18n.language === "ar" ? "rtl" : "ltr";
  const HRpackages = egpPackages(t);
  const HFpackages = getUsdPackages(t);
+ const HHpackages = getHHpacks(t);
+
   const theme = createTheme({ direction });
   const cache = createEmotionCache(direction);
 
@@ -46,7 +48,7 @@ function App() {
             <Routes>
               <Route path="*" element={<Home />} />
               <Route path="/" element={<Home />} />
-              <Route path="/invest" element={<Apply />} />
+              <Route path="/invest/:pac" element={<Apply />} />
               <Route path="/our-companies" element={<Companies />} />
               <Route path="/About-Us" element={<About />} />
               <Route path="/Honest-Financial-Brokerage" element={  
@@ -62,7 +64,7 @@ function App() {
               <Route path="/Honest-Homes" element={  
                                                   <LandingPage
                                                     content= {<HHC />}
-                                                    customPackages={HFpackages} 
+                                                    customPackages={HHpackages} 
                                                   />} />
             </Routes>
             <Footer />

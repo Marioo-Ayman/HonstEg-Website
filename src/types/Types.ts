@@ -1,6 +1,6 @@
 export type PackageForm = {
   packageId: string;
-  packageName: string;
+  packageName: any;
   investmentAmount: number;
 };
 

@@ -6,7 +6,7 @@ export const applySchema = Yup.object({
   email: Yup.string().email().required("Email is required"),
   phone: Yup.string().required("Phone is required"),
   civilID: Yup.string().required("National ID is required"),
-
+  link: Yup.string().optional(),
   packages: Yup.array()
     .of(
       Yup.object({
@@ -17,5 +17,4 @@ export const applySchema = Yup.object({
           .required("Investment amount is required"),
       })
     )
-    .min(1, "At least one package is required"),
 });

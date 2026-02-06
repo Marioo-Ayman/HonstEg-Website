@@ -39,7 +39,7 @@
       "description": "A group of companies operating in several sectors, including real estate investment, gold investment, the Egyptian stock exchange and securities trading, as well as training and qualifying individuals in business, marketing, and technology."
     },
     "companies": {
-      "honestHouse": "Honest House"
+      "honestHouse": "Honest Homes"
     },
     "stats": {
       "happyClients": "Happy Clients",
@@ -149,6 +149,25 @@
     "description": "An exclusive elite investment package offering maximum potential returns, designed for high-value investors who demand strategic forecasting, stability, and long-term growth.",
     "duration": "1 Year",
     "paymentFrequency": "Monthly"
+  },
+  "primaryHH": {
+    "name": "Primary",
+    "description": "Real estate investment package with installment payments over 2 years. Revenue is paid quarterly or annually. Down payment is paid by the client and is non-refundable.",
+
+    "duration": "2 Years",
+    "paymentFrequency": "Quarterly / Annually"
+  },
+  "plusHH": {
+    "name": "Plus",
+    "description": "Medium-term real estate investment package with installment payments over 4 years. Revenue is paid quarterly or annually. Down payment is paid by the client and is non-refundable.",
+    "duration": "4 Years",
+    "paymentFrequency": "Quarterly / Annually"
+  },
+  "premiumHH": {
+    "name": "Premium",
+    "description": "Long-term real estate investment package with installment payments over 6 years. Revenue is paid quarterly or annually. Down payment is paid by the client and is non-refundable.",
+    "duration": "6 Years",
+    "paymentFrequency": "Quarterly / Annually"
   }
   },
   "footer": {
@@ -169,7 +188,8 @@
       "alexandria": "81A Sidi Gaber Street - Alexandria"
     },
     "contact": {
-      "title": "Contact Info"
+      "title": "Contact Info",
+      "phone": "+20 1122258164"
     },
     "copyright": "© {{year}} Honest Egy. All rights reserved."
   },"about": {

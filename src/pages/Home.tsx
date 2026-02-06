@@ -8,17 +8,11 @@ import ContactUs from "@/components/ContactUs";
 import { useRef, useEffect } from "react";
 import { motion, useInView } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import {
-  textReveal,
-  textLine
-} from "@/utils/animations";
-
+import { useTranslation } from "react-i18next";
+import { textReveal, textLine } from "@/utils/animations";
 
 export default function Home() {
   const { t } = useTranslation();
-  
-  
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -51,44 +45,46 @@ export default function Home() {
   return (
     <main className="w-full overflow-x-hidden">
       {/* Hero Section */}
-     <div ref={homeRef} className="min-h-screen flex items-center justify-center overflow-hidden relative ">
-          <motion.img
-            src={Bg1}
-            alt="Background"
-            className="absolute top-0 left-0 w-full h-full object-cover -z-10 blur-xs transform scale-x-100 md:scale-x-105"
-            initial={{ scale: 1.2, opacity: 0 }}
-            animate={{ scale: 1.05, opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          />
-          <div className="absolute inset-0 bg-stone-950 opacity-60"></div>
-          
-          <motion.div
-            className="relative text-center text-white px-4"
-            variants={textReveal}
-            initial="hidden"
-            animate="visible"
+      <div
+        ref={homeRef}
+        className="min-h-screen flex items-center justify-center overflow-hidden relative "
+      >
+        <motion.img
+          src={Bg1}
+          alt="Background"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 blur-xs transform scale-x-100 md:scale-x-105"
+          initial={{ scale: 1.2, opacity: 0 }}
+          animate={{ scale: 1.05, opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        />
+        <div className="absolute inset-0 bg-stone-950 opacity-60"></div>
+
+        <motion.div
+          className="relative text-center text-white px-4"
+          variants={textReveal}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p
+            variants={textLine}
+            className="text-5xl md:text-9xl font-thin text-white mb-8"
           >
-            <motion.p
-              variants={textLine}
-              className="text-5xl md:text-9xl font-thin text-white mb-8"
-            >
-              {t("home.hero.takeYour")}
-            </motion.p>
-            <motion.p
-              variants={textLine}
-              className="text-5xl md:text-9xl font-medium text-[#FFB300] mb-8"
-            >
-              {t("home.hero.investStrategy")}
-            </motion.p>
-            <motion.p
-              variants={textLine}
-              className="text-5xl md:text-9xl font-medium text-white mb-8"
-            >
-              {t("home.hero.nextLevel")}
-            </motion.p>
-          </motion.div>
-          
-        </div>
+            {t("home.hero.takeYour")}
+          </motion.p>
+          <motion.p
+            variants={textLine}
+            className="text-5xl md:text-9xl font-medium text-[#FFB300] mb-8"
+          >
+            {t("home.hero.investStrategy")}
+          </motion.p>
+          <motion.p
+            variants={textLine}
+            className="text-5xl md:text-9xl font-medium text-white mb-8"
+          >
+            {t("home.hero.nextLevel")}
+          </motion.p>
+        </motion.div>
+      </div>
 
       {/* About Section */}
       <div
@@ -96,29 +92,55 @@ export default function Home() {
         id="about"
         className="flex flex-col scroll-mt-24 justify-center items-center space-y-2.5 mt-10"
       >
-        <div className="flex flex-col md:flex-row border-0 rounded-xl shadow-2xl w-3/4 pt-10 pb-10 justify-center items-center">
-          <div className="p-5 md:p-15 md:w-3/4 flex flex-col justify-center">
-            <h2 className="text-xl md:text-[30px] font">
-              {t('home.about.welcome')}
+        <div
+          className="
+      flex flex-col md:flex-row
+      items-center gap-8
+      w-full max-w-7xl
+      rounded-2xl shadow-2xl
+      bg-white
+      px-6 py-10
+      md:px-10 md:py-14
+    "
+        >
+          {/* Text Section */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <h2 className="text-lg sm:text-xl md:text-2xl text-slate-700">
+              {t("home.about.welcome")}
             </h2>
-            <br />
-            <h1 className="text-3xl md:text-6xl font-medium bg-gradient-to-r from-blue-950 via-sky-400 to-indigo-400 text-transparent bg-clip-text inline-block">
-              {t('home.about.title')}
+
+            <h1
+              className="
+          mt-3
+          text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+          font-semibold
+          bg-gradient-to-r from-blue-950 via-sky-400 to-indigo-400
+          text-transparent bg-clip-text
+        "
+            >
+              {t("home.about.title")}
             </h1>
-            <br />
-            <p className="text-[17px] md:text-2xl text-gray-700 ">
-              {t('home.about.description')}
+
+            <p className="mt-5 text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+              {t("home.about.description")}
             </p>
           </div>
-          <div>
+
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 flex justify-center">
             <img
               src={About}
-              alt="algorithm trading pic"
-              className="scale-90 rounded-2xl drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] md:scale-90"
+              alt="algorithm trading"
+              className="
+          w-full max-w-sm sm:max-w-md lg:max-w-lg
+          rounded-2xl
+          object-cover
+          drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]
+        "
             />
           </div>
         </div>
-        
+
         <section
           ref={ref}
           className="flex flex-row justify-around w-full bg-gradient-to-br from-slate-950 to-sky-500 p-5 md:p-10 md:mb-15 mb-5"
@@ -126,25 +148,25 @@ export default function Home() {
           <div className="grid justify-items-center p-4">
             <Counter target={1500} start={isInView} />
             <p className="text-white md:text-xl text-md">
-              {t('home.stats.happyClients')}
+              {t("home.stats.happyClients")}
             </p>
           </div>
           <div className="grid justify-items-center p-4">
             <Counter target={124} start={isInView} />
             <p className="text-white md:text-xl text-md">
-              {t('home.stats.invests')}
+              {t("home.stats.invests")}
             </p>
           </div>
           <div className="grid justify-items-center p-4">
             <Counter target={110} start={isInView} />
             <p className="text-white md:text-xl text-md">
-              {t('home.stats.investors')}
+              {t("home.stats.investors")}
             </p>
           </div>
           <div className="grid justify-items-center p-4">
             <Counter target={4} start={isInView} />
             <p className="text-white md:text-xl text-md">
-              {t('home.stats.years')}
+              {t("home.stats.years")}
             </p>
           </div>
         </section>
@@ -158,7 +180,7 @@ export default function Home() {
                 alt="Honest Homes"
                 className="object-cover scale-70 h-35"
               />
-              <p>{t('home.companies.honestHouse')}</p>
+              <p>{t("home.companies.honestHouse")}</p>
             </div>
           </Link>
           <Link to="/our-companies">
@@ -180,7 +202,6 @@ export default function Home() {
         </div>
 
         {/* Statistics Section */}
-    
       </div>
 
       {/* Investment Packages Section */}
@@ -212,8 +233,8 @@ export default function Home() {
           className="max-w-6xl mx-auto mb-8 text-center"
         ></motion.div> */}
 
-        {/* Cards Grid with AnimatePresence for smooth transitions */}
-        {/* <div className="max-w-6xl mx-auto">
+      {/* Cards Grid with AnimatePresence for smooth transitions */}
+      {/* <div className="max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentPage}
@@ -262,11 +283,11 @@ export default function Home() {
     </main>
   );
 }
-    //  <LandingPage
-    //     heroTitle="Invest in Your Future"
-    //     heroSubtitle="Discover investment opportunities across real estate, finance, and professional development"
-    //     heroImageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop"
-    //     aboutContent="We are a leading investment company providing innovative solutions across multiple sectors. Our integrated approach combines real estate expertise, financial advisory services, and professional training to create comprehensive opportunities for investors and entrepreneurs looking to build sustainable wealth."
-    //     packs={packages}
-    //     ctaButtonText="Explore Packages"
-    //   />
+//  <LandingPage
+//     heroTitle="Invest in Your Future"
+//     heroSubtitle="Discover investment opportunities across real estate, finance, and professional development"
+//     heroImageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop"
+//     aboutContent="We are a leading investment company providing innovative solutions across multiple sectors. Our integrated approach combines real estate expertise, financial advisory services, and professional training to create comprehensive opportunities for investors and entrepreneurs looking to build sustainable wealth."
+//     packs={packages}
+//     ctaButtonText="Explore Packages"
+//   />

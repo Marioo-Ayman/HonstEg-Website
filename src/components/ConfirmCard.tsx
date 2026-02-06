@@ -56,7 +56,7 @@ export default function ConfirmationCard({
         </div>
 
         {/* Order Summary (Optional) */}
-        <div className="mb-8 rounded-lg bg-muted/30 p-4">
+        {/* <div className="mb-8 rounded-lg bg-muted/30 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">
             Transaction Details
           </p>
@@ -66,7 +66,7 @@ export default function ConfirmationCard({
           <p className="text-xs text-muted-foreground mt-1">
             You will receive a confirmation email shortly
           </p>
-        </div>
+        </div> */}
 
         {/* Action Buttons */}
         <div className="flex gap-3">

@@ -128,8 +128,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors text-sm"
               >
                 <PhoneOutlinedIcon className="w-4 h-4" />
-                +20 1122258164
-              </a>
+{                   t('footer.contact.phone')}</a>
               <a
                 href="mailto:contact@honestegy.net"
                 className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors text-sm break-all"
