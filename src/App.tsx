@@ -16,7 +16,7 @@ import HFBC from "@/components/Companies/HFBC";
 import {egpPackages, getUsdPackages,getHHpacks} from "@/constance/packs"
 function App() {
   const Apply = lazy(() => import("./pages/Apply"));
-  const ApplySP = lazy(() => import("./pages/Applysp"));
+  const ApplySP = lazy(() => import("./pages/CustomApply"));
   const Companies = lazy(() => import("./pages/Companies"));
   const About = lazy(() => import("./pages/About"));
   const { t,i18n } = useTranslation();

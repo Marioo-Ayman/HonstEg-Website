@@ -177,14 +177,14 @@ export default function ApplySP() {
                             const packageErrorItem = Array.isArray(errors.packages) ? errors.packages[i] : undefined;
 
                             // Narrow: is it an object (field-level errors) or a string (array-item-level error)?
-                            const packageErrors =
-                              packageErrorItem && typeof packageErrorItem === 'object'
-                                ? (packageErrorItem as FormikErrors<PackageForm>) // or your actual shape
-                                : undefined;
+                            // const packageErrors =
+                            //   packageErrorItem && typeof packageErrorItem === 'object'
+                            //     ? (packageErrorItem as FormikErrors<PackageForm>) // or your actual shape
+                            //     : undefined;
 
-                            const packageTouched = Array.isArray(touched.packages)
-                              ? touched.packages[i]
-                              : undefined;
+                            // const packageTouched = Array.isArray(touched.packages)
+                            //   ? touched.packages[i]
+                            //   : undefined;
 
                             // Optional: show array-item level error (if any)
                             const arrayItemError =
