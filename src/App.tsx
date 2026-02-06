@@ -16,6 +16,7 @@ import HFBC from "@/components/Companies/HFBC";
 import {egpPackages, getUsdPackages,getHHpacks} from "@/constance/packs"
 function App() {
   const Apply = lazy(() => import("./pages/Apply"));
+  const ApplySP = lazy(() => import("./pages/Applysp"));
   const Companies = lazy(() => import("./pages/Companies"));
   const About = lazy(() => import("./pages/About"));
   const { t,i18n } = useTranslation();
@@ -49,6 +50,7 @@ function App() {
               <Route path="*" element={<Home />} />
               <Route path="/" element={<Home />} />
               <Route path="/invest/:pac" element={<Apply />} />
+              <Route path="/Apply/:pac" element={<ApplySP />} />
               <Route path="/our-companies" element={<Companies />} />
               <Route path="/About-Us" element={<About />} />
               <Route path="/Honest-Financial-Brokerage" element={  

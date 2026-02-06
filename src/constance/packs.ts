@@ -185,6 +185,7 @@ interface Package {
     minimumInvestment: "1,000,000 EGP",
     duration:t('packages.plusHH.duration'),
     riskLevel: t('packages.plusHH.paymentFrequency'),
+
   },
   {
     packageId: "18",
@@ -194,6 +195,7 @@ interface Package {
     minimumInvestment: "2,000,000 EGP",
     duration:t('packages.premiumHH.duration'),
     riskLevel: t('packages.premiumHH.paymentFrequency'),
+    variant: "dark" as const,
   },
 ];
 //   const investmentPackages = [

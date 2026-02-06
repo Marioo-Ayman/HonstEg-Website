@@ -13,3 +13,13 @@ export type ApplyFormValues = {
   link?: string;
   packages: PackageForm[];
 };
+export type ApplyFormValuesSP = {
+  fName: string;
+  lName: string;
+  email: string;
+  phone: string;
+  civilID: string;
+  returns: string;
+  link?: string;
+  packages: PackageForm[];
+};

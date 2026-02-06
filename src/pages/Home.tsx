@@ -5,11 +5,12 @@ import HFB from "@/assets/HFB.png";
 import About from "@/assets/Algorithmic_20Trading.jpeg";
 import Counter from "@/components/Counter";
 import ContactUs from "@/components/ContactUs";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect,useState } from "react";
 import { motion, useInView } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { textReveal, textLine } from "@/utils/animations";
+import { InvestmentModal } from '@/pages/AdScreen';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -23,6 +24,8 @@ export default function Home() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
   const homeRef = useRef<HTMLDivElement | null>(null);
+const [isModalOpen, setIsModalOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const sectionRefs: Record<string, React.RefObject<HTMLElement | null>> = {
     packs: packsRef,
@@ -40,7 +43,15 @@ export default function Home() {
         ref.current.scrollIntoView({ behavior: "smooth" });
       }
     }
+    setMounted(true);
+    // Open modal after 2 seconds
+    const timer = setTimeout(() => {
+      setIsModalOpen(true);
+    }, 0);
+
+    return () => clearTimeout(timer);
   }, [location]);
+  if (!mounted) return null;
 
   return (
     <main className="w-full overflow-x-hidden">
@@ -105,7 +116,7 @@ export default function Home() {
         >
           {/* Text Section */}
           <div className="w-full md:w-1/2 flex flex-col justify-center">
-            <h2 className="text-lg sm:text-xl md:text-2xl text-slate-700">
+            <h2 className="text-lg sm:text-xl md:text-2xl  text-slate-700">
               {t("home.about.welcome")}
             </h2>
 
@@ -280,14 +291,7 @@ export default function Home() {
       >
         <ContactUs />
       </div>
+      <InvestmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );
 }
-//  <LandingPage
-//     heroTitle="Invest in Your Future"
-//     heroSubtitle="Discover investment opportunities across real estate, finance, and professional development"
-//     heroImageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop"
-//     aboutContent="We are a leading investment company providing innovative solutions across multiple sectors. Our integrated approach combines real estate expertise, financial advisory services, and professional training to create comprehensive opportunities for investors and entrepreneurs looking to build sustainable wealth."
-//     packs={packages}
-//     ctaButtonText="Explore Packages"
-//   />
