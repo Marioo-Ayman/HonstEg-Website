@@ -1,0 +1,1 @@
+var e=`http://shadshok-001-site44.ktempurl.com/assets/business-man-DPBdNKQX.jpg`;export{e as t};

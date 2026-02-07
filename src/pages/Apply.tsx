@@ -57,7 +57,7 @@ export default function Apply() {
                   {t("apply.imageUpload.title")}
                 </h1>
               </div>
-              <p className='text-gray-700'>
+              {/* <p className='text-gray-700'>
                 - {t("apply.imageUpload.important")}
               </p>
               <p className='text-gray-700'>
@@ -65,7 +65,7 @@ export default function Apply() {
               </p>
               <p className='text-gray-700'>
                 - {t("apply.imageUpload.rule2")}
-              </p>
+              </p> */}
             </div>
 
             <ImageUploadField

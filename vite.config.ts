@@ -13,7 +13,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/",
+  base: "http://shadshok-001-site44.ktempurl.com/",
    resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),

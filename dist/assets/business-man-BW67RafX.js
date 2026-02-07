@@ -1,1 +1,0 @@
-var e=`/assets/business-man-DPBdNKQX.jpg`;export{e as t};
