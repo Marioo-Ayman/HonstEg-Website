@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import Button from "@mui/material/Button";
-import Image from '@/assets/offer.jpg';
 import { useState, useEffect } from 'react';
 import type { Variants } from "framer-motion";
 import { useNavigate } from "react-router-dom";

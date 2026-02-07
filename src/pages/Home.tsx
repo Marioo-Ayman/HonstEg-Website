@@ -4,7 +4,7 @@ import HR from "@/assets/HR.png";
 import HFB from "@/assets/HFB.png";
 import About from "@/assets/Algorithmic_20Trading.jpeg";
 import Counter from "@/components/Counter";
-import {PremiumInvestmentOffer} from "@/components/InvestmentOffer";
+// import {PremiumInvestmentOffer} from "@/components/InvestmentOffer";
 import ContactUs from "@/components/ContactUs";
 import { useRef, useEffect,useState } from "react";
 import { motion, useInView } from "motion/react";
@@ -182,7 +182,7 @@ export default function Home() {
           </div>
         </section>
 
-      <PremiumInvestmentOffer  />
+      {/* <PremiumInvestmentOffer  /> */}
 
         {/* Companies Section */}
             <p className="text-4xl md:text-5xl font-bold text-gray-900 text-balance"> {t("companies.section.title")}</p>
