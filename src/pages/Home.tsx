@@ -25,7 +25,7 @@ export default function Home() {
   const contactRef = useRef<HTMLDivElement | null>(null);
   const homeRef = useRef<HTMLDivElement | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [, setMounted] = useState(false);
 
   const sectionRefs: Record<string, React.RefObject<HTMLElement | null>> = {
     packs: packsRef,
