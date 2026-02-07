@@ -4,6 +4,7 @@ import HR from "@/assets/HR.png";
 import HFB from "@/assets/HFB.png";
 import About from "@/assets/Algorithmic_20Trading.jpeg";
 import Counter from "@/components/Counter";
+import {PremiumInvestmentOffer} from "@/components/InvestmentOffer";
 import ContactUs from "@/components/ContactUs";
 import { useRef, useEffect,useState } from "react";
 import { motion, useInView } from "motion/react";
@@ -13,7 +14,7 @@ import { textReveal, textLine } from "@/utils/animations";
 import { InvestmentModal } from '@/pages/AdScreen';
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -50,7 +51,7 @@ export default function Home() {
     }, 0);
 
     return () => clearTimeout(timer);
-  }, [location]);
+  }, [location, i18n.language]);
 
   return (
     <main className="w-full overflow-x-hidden">
@@ -181,7 +182,10 @@ export default function Home() {
           </div>
         </section>
 
+      <PremiumInvestmentOffer  />
+
         {/* Companies Section */}
+            <p className="text-4xl md:text-5xl font-bold text-gray-900 text-balance"> {t("companies.section.title")}</p>
         <div className="flex flex-col md:flex-row gap-2 justify-around items-center w-3/4 mb-12">
           <Link to="/our-companies">
             <div className="flex flex-col justify-center items-center p-6 cursor-pointer hover:scale-110 transition-transform duration-300">

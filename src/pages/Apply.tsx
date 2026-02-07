@@ -9,6 +9,7 @@ import ConfirmationCard from "@/components/ConfirmCard";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import type { FormikErrors} from "formik";
+import MenuItem from '@mui/material/MenuItem';
 
 export default function Apply() {
   const { t,i18n } = useTranslation();
@@ -20,6 +21,7 @@ export default function Apply() {
     email: "",
     phone: "",
     civilID: "",
+    returns: "",
     link:"",
     packages: [
       {
@@ -136,6 +138,22 @@ export default function Apply() {
                 error={touched.civilID && Boolean(errors.civilID)}
                 helperText={touched.civilID && errors.civilID}
               />
+                     <TextField
+                select
+                fullWidth
+                name="returns"
+                label={t("apply.userInfo.returns")}
+                value={values.returns || ""}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.returns && Boolean(errors.returns)}
+                helperText={touched.returns && errors.returns}
+                >
+                <MenuItem value="Monthly">{t('modal.returns.monthly')}</MenuItem>
+                <MenuItem value="Quarterly">{t('modal.returns.quarterly')}</MenuItem>
+                <MenuItem value="Semi-Annually">{t('modal.returns.semiAnnually')}</MenuItem>
+                <MenuItem value="Annually">{t('modal.returns.annually')}</MenuItem>
+                </TextField>
             </div>
 
             {/* Packages Section */}

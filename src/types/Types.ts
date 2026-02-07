@@ -10,6 +10,7 @@ export type ApplyFormValues = {
   email: string;
   phone: string;
   civilID: string;
+  returns: string;
   link?: string;
   packages: PackageForm[];
 };

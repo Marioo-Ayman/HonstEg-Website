@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useMemo } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
@@ -15,12 +15,12 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
   const isRTL = i18n.language === 'ar';
 
   // Returns data array
-  const returnsData = [
-    { period: t('modal.returns.monthly'), rate: '13%' },
-    { period: t('modal.returns.quarterly'), rate: '14%' },
-    { period: t('modal.returns.semiAnnually'), rate: '15%' },
-    { period: t('modal.returns.annually'), rate: '16%' },
-  ];
+const returnsData = useMemo(() => [
+  { period: t('modal.returns.monthly'), rate: '13%' },
+  { period: t('modal.returns.quarterly'), rate: '14%' },
+  { period: t('modal.returns.semiAnnually'), rate: '15%' },
+  { period: t('modal.returns.annually'), rate: '16%' },
+], [t, i18n.language]);
 
   useEffect(() => {
     if (isOpen) {
@@ -42,7 +42,7 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
     //   document.body.style.overflow = 'unset';
       document.removeEventListener('keydown', handleEsc);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, i18n.language]);
 
   if (!isOpen) return null;
 
@@ -74,7 +74,7 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
 
         {/* Header */}
         <div className={`pt-8 px-8 pb-4 ${isRTL ? 'text-right' : 'text-left'}`}>
-          <div className="inline-block mb-4 px-3 py-1 bg-[#FFB300] text-[#1d283a] text-xs font-semibold rounded-full">
+          <div className="inline-block mb-4 px-3 py-1 bg-[#FFB300] text-[#1d283a] text-md font-semibold rounded-full">
             {t('modal.limitedOffer')}
           </div>
           <h2 className="text-3xl font-bold text-[#1d283a] mb-2">
@@ -89,7 +89,7 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
         <div className="px-8 py-6 border-t border-b border-[#e5e5e5]">
           <div className="grid grid-cols-2 gap-6">
             <div className={`space-y-1 ${isRTL ? 'text-right' : 'text-left'}`}>
-              <p className="text-xs text-[#737373] font-medium uppercase tracking-wide">
+              <p className="text-md text-[#737373] font-medium uppercase tracking-wide">
                 {t('modal.details.minimumInvestment')}
               </p>
               <p className="text-xl font-bold text-[#FFB300]">
@@ -97,7 +97,7 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
               </p>
             </div>
             <div className={`space-y-1 ${isRTL ? 'text-right' : 'text-left'}`}>
-              <p className="text-xs text-[#737373] font-medium uppercase tracking-wide">
+              <p className="text-md text-[#737373] font-medium uppercase tracking-wide">
                 {t('modal.details.profitPayout')}
               </p>
               <p className="text-xl font-bold text-[#1d283a]">
@@ -105,7 +105,7 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
               </p>
             </div>
             <div className={`space-y-1 ${isRTL ? 'text-right' : 'text-left'}`}>
-              <p className="text-xs text-[#737373] font-medium uppercase tracking-wide">
+              <p className="text-md text-[#737373] font-medium uppercase tracking-wide">
                 {t('modal.details.principalReturn')}
               </p>
               <p className="text-xl font-bold text-[#1d283a]">
@@ -113,7 +113,7 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
               </p>
             </div>
             <div className={`space-y-1 ${isRTL ? 'text-right' : 'text-left'}`}>
-              <p className="text-xs text-[#737373] font-medium uppercase tracking-wide">
+              <p className="text-md text-[#737373] font-medium uppercase tracking-wide">
                 {t('modal.details.limitedTo')}
               </p>
               <p className="text-xl font-bold text-[#FFB300]">
@@ -125,7 +125,7 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
 
         {/* Returns Section */}
         <div className={`px-8 py-6 space-y-4 ${isRTL ? 'text-right' : 'text-left'}`}>
-          <p className="text-xs text-[#737373] font-medium uppercase tracking-wide">
+          <p className="text-md text-[#737373] font-medium uppercase tracking-wide">
             {t('modal.expectedReturns')}
           </p>
           <div className="space-y-3">
@@ -160,7 +160,7 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
 
         {/* Footer */}
         <div className="px-8 pb-6 pt-4">
-          <p className="text-xs text-[#737373] text-center">
+          <p className="text-md text-[#737373] text-center">
             {t('modal.disclaimer')}
           </p>
         </div>

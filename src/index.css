@@ -46,7 +46,7 @@ html {
     font-family: 'Poppins', sans-serif;
   }
   :root[lang="ar"] {
-    font-family: 'GraphikArabic', sans-serif;
+    font-family: "GraphikArabic", sans-serif;
   }
 }
 
@@ -124,31 +124,64 @@ html {
     animation: linkDropRTL 0.5s ease-out forwards;
   }
 }
+
 :root {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  /* background-color: #242424;
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(217 33% 17%);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  --color-primary: #0F5F8C;
-  --color-primary-dark: #0A3F5C;
-  --color-black: #111111;
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(217 33% 17%);
 
-  --color-bg: #FFFFFF;
-  --color-bg-muted: #F4F6F8;
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(217 33% 17%);
 
-  --color-border: #E5E7EB;
+  --primary: hsl(217 33% 17%);
+  --primary-foreground: hsl(0 0% 98%);
 
-  --color-text: #374151;
-  --color-text-muted: #6B7280;
+  --secondary: hsl(0 0% 96.1%);
+  --secondary-foreground: hsl(217 33% 17%);
 
-  --color-success: #16A34A;
-  --color-warning: #F59E0B;
-  --color-error: #DC2626;
-  --color-info: #2563EB; */
+  --muted: hsl(0 0% 96.1%);
+  --muted-foreground: hsl(0 0% 45.1%);
+
+  --accent: hsl(43 100% 50%);
+  --accent-foreground: hsl(217 33% 17%);
+
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 98%);
+
+  --border: rgb(229, 229, 229);
+  --input: hsl(0 0% 89.8%);
+  --ring: hsl(217 33% 17%);
+
+  /* Brand colors */
+  --gold: hsl(43 100% 50%);
+  --gold-light: hsl(43 100% 60%);
+  --navy: hsl(217 33% 17%);
+  --navy-light: hsl(217 33% 27%);
+
+  /* Charts */
+  --chart-1: hsl(43 100% 50%);
+  --chart-2: hsl(217 33% 17%);
+  --chart-3: hsl(0 0% 95%);
+  --chart-4: hsl(43 100% 60%);
+  --chart-5: hsl(217 33% 27%);
+
+  /* Layout */
+  --radius: 0.75rem;
+
+  /* Sidebar */
+  --sidebar-background: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(217 33% 17%);
+  --sidebar-primary: hsl(217 33% 17%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(43 100% 50%);
+  --sidebar-accent-foreground: hsl(217 33% 17%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(43 100% 50%);
+
   margin: 0;
   padding: 0;
 }

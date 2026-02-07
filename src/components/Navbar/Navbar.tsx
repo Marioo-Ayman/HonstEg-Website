@@ -97,7 +97,7 @@ const Navbar = () => {
                 { key: "home", to: "/#home" },
                 { key: "about", to: "/About-Us" },
                 { key: "contact", to: "/#contact" },
-                { key: "join", to: "/our-companies" },
+                // { key: "join", to: "/our-companies" },
               ].map((item, index) => (
                 <Link key={item.key} to={item.to}>
                   <p
@@ -162,7 +162,7 @@ const Navbar = () => {
           {[
             { key: "home", to: "/#home" },
             { key: "about", to: "/About-Us" },
-            { key: "join", to: "/our-companies" },
+            // { key: "join", to: "/our-companies" },
           ].map((item) => (
             <ListItem key={item.key} disablePadding>
               <Link to={item.to} className="w-full">

@@ -6,6 +6,7 @@ export const applySchema = Yup.object({
   email: Yup.string().email().required("Email is required"),
   phone: Yup.string().required("Phone is required"),
   civilID: Yup.string().required("National ID is required"),
+  returns: Yup.string().required("Returns is required"),
   link: Yup.string().optional(),
   packages: Yup.array()
     .of(
