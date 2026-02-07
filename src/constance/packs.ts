@@ -185,6 +185,7 @@ interface Package {
     minimumInvestment: "1,000,000 EGP",
     duration:t('packages.plusHH.duration'),
     riskLevel: t('packages.plusHH.paymentFrequency'),
+    variant: "dark" as const,
 
   },
   {

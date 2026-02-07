@@ -18,13 +18,13 @@ export default function Home() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
   const location = useLocation();
-
+  
   // Create refs for multiple sections
   const packsRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
   const homeRef = useRef<HTMLDivElement | null>(null);
-const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   const sectionRefs: Record<string, React.RefObject<HTMLElement | null>> = {
@@ -51,7 +51,6 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 
     return () => clearTimeout(timer);
   }, [location]);
-  if (!mounted) return null;
 
   return (
     <main className="w-full overflow-x-hidden">

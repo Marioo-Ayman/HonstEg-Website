@@ -150,17 +150,17 @@ export default function ApplySP() {
                 select
                 fullWidth
                 name="returns"
-                label="Returns"
+                label={t("apply.userInfo.returns")}
                 value={values.returns || ""}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 error={touched.returns && Boolean(errors.returns)}
                 helperText={touched.returns && errors.returns}
                 >
-                <MenuItem value="Monthly">Monthly</MenuItem>
-                <MenuItem value="4 Months">4 Months</MenuItem>
-                <MenuItem value="6 Months">6 Months</MenuItem>
-                <MenuItem value="Yearly">Yearly</MenuItem>
+                <MenuItem value="Monthly">{t('modal.returns.monthly')}</MenuItem>
+                <MenuItem value="Quarterly">{t('modal.returns.quarterly')}</MenuItem>
+                <MenuItem value="Semi-Annually">{t('modal.returns.semiAnnually')}</MenuItem>
+                <MenuItem value="Annually">{t('modal.returns.annually')}</MenuItem>
                 </TextField>
             </div>
 

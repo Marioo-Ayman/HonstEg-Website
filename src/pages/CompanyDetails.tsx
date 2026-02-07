@@ -139,9 +139,8 @@ export function LandingPage({
           <motion.div
             className={`text-center mb-16 ${isRTL ? 'rtl' : 'ltr'}`}
             variants={containerVariants}
-            initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: false, margin: '-10px' }}
           >
             <motion.h2
               className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 bg-gradient-to-r from-blue-950 via-sky-400 to-indigo-400 text-transparent bg-clip-text inline-block"

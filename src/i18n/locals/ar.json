@@ -292,7 +292,8 @@
       "email": "عنوان البريد الإلكتروني",
       "Link": "ادخل رابط | كود مسوول المبيعات",
       "Link2": "الرابط",
-      "nationalId": "الرقم القومي"
+      "nationalId": "الرقم القومي",
+      "returns": "العائد"
     },
     "packages": {
       "title": "الباقة",
@@ -310,7 +311,32 @@
     "ourPackages": "باقاتنا",
     "choosePackage": "اختر الخطة المثالية لاحتياجاتك",
     "noPackages": "لا توجد باقات متاحة في الوقت الحالي"
-  }
+    }
+  },
+  "modal": {
+    "closeButton": "إغلاق النافذة",
+    "limitedOffer": "عرض لفترة محدودة",
+    "title": "محفظة المعادن الآمنة",
+    "subtitle": "برنامج استثماري حصري لمدة 12 شهرًا",
+    "details": {
+      "minimumInvestment": "الحد الأدنى للاستثمار",
+      "minimumAmount": "1,000,000 جنيه",
+      "profitPayout": "دفع الأرباح",
+      "payoutFrequency": "شهريًا",
+      "principalReturn": "استرداد رأس المال",
+      "returnTiming": "عند الاستحقاق",
+      "limitedTo": "محدود بـ",
+      "clientLimit": "70 عميل"
+    },
+    "expectedReturns": "العوائد المتوقعة",
+    "returns": {
+      "monthly": "شهريًا",
+      "quarterly": "ربع سنوي",
+      "semiAnnually": "نصف سنوي",
+      "annually": "سنويًا"
+    },
+    "applyNow": "قدم الآن",
+    "disclaimer": "تطبق الشروط والأحكام. جميع الاستثمارات تحمل مخاطر."
   }
   
 }

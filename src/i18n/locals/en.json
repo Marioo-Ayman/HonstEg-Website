@@ -290,7 +290,8 @@
       "email": "Email Address",
       "Link": "Drop Sales Code / Link Here",
       "Link2": "Link",
-      "nationalId": "National ID"
+      "nationalId": "National ID",
+      "returns": "Returns"
     },
     "packages": {
       "title": "Packages",
@@ -303,5 +304,30 @@
       "submit": "Submit",
       "investMore": "Invest More"
     }
+  },
+  "modal": {
+    "closeButton": "Close modal",
+    "limitedOffer": "LIMITTED TIME  OFFER",
+    "title": "Safe Metals Wallet",
+    "subtitle": "Exclusive 12-Month Investment Program",
+    "details": {
+      "minimumInvestment": "Minimum Investment",
+      "minimumAmount": "1,000,000 EGP",
+      "profitPayout": "Profit Payout",
+      "payoutFrequency": "Monthly",
+      "principalReturn": "Principal Return",
+      "returnTiming": "At Maturity",
+      "limitedTo": "Limited to",
+      "clientLimit": "70 Clients"
+    },
+    "expectedReturns": "Expected Returns",
+    "returns": {
+      "monthly": "Monthly",
+      "quarterly": "Quarterly",
+      "semiAnnually": "Semi-Annually",
+      "annually": "Annually"
+    },
+    "applyNow": "Apply Now",
+    "disclaimer": "Terms and conditions apply. All investments carry risk."
   }
 }
